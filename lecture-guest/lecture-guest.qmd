@@ -19,6 +19,7 @@ date: 10/9/2023
 date-format: "D[th] MMMM YYYY"
 execute:
   echo: true
+output-file: "index.html"
 ---
 
 ```{r setup, include = FALSE}
