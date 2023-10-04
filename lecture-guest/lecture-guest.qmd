@@ -254,7 +254,7 @@ cat(readLines("images/comm-model-id.svg")[c(-1, -2)], "\n")
 ::: {.fragment .f-headline style="padding-left:20%;padding-right:20%;text-align:center;"}
 
 
-<i class="fa-solid fa-comments"></i> **_Communication_** is a key to get the most out of the experimental data
+<i class="fa-solid fa-comments"></i> **_Communication_** is the key to get the most out of the experimental data
 
 :::
 
@@ -263,9 +263,15 @@ cat(readLines("images/comm-model-id.svg")[c(-1, -2)], "\n")
 
 # [The Grammar of Experimental Designs]{style="color:white;"} {background-color="#be830e"}
 
-<center>
+<center style="font-size:1.2em;color: white">
 
-[<i class='fas fa-lightbulb'></i> combine limited number of "words" (functions) to construct a variety of "sentences" (experimental designs)]{style="font-size:1.2em;color: white"}
+```{r}
+#| echo: false
+#| output: asis
+cat(fa_list(c("fas fa-code" = "Use code to formulate your understanding and for communication.","fas fa-lightbulb" = 'Combine limited number of "words" (functions) to construct a variety of "sentences" (experimental designs).'), incremental = TRUE))
+```
+
+
 
 </center>
 
@@ -278,7 +284,7 @@ remotes::install_github("emitanaka/edibble")
 
 ::: {style="font-size:1.6em;"}
 
-- The aim of `edibble` package is to make an **e**xperimental **d**esign t**ibble** (note: tidyverse version of a table).
+- The aim of `edibble` package is to make an **e**xperimental **d**esign t**ibble** [(note: tidyverse version of a table)]{style="font-size:0.5em!important;"}.
 
 :::
 
@@ -678,7 +684,7 @@ This is in fact a **split-plot design**!
 
 ## What's the response?
 
-- We don't really need to know what the response to design the experiment.
+- We don't often need to know what the response is to design the experiment.
 - But it's better for experimental planning.
 
 . . . 
@@ -735,15 +741,85 @@ export_design(myplan, "mydata.xlsx")
 
 ## Simulating an experiment
 
+::: incremental
+
 - Think of your **statistical analysis plan** at the designing stage!
-- Simulate your experiment ... bla bla...
+- You can consider simulating data for your experiment.
+
+:::
+
+. . . 
+
+- Enter your simulation scheme like below.
+
+```{r}
+mysimprocess <- myplan %>% 
+  simulate_process(biomass = function(deffect = 2,
+                                      heffects = c(0, 1, 2)) {
+    # assume the following effects
+    diversity_effect <- deffect
+    heat_effect <- c("0°C" = heffects[1], "1.5°C" = heffects[2], "3°C" = heffects[3])
+    
+    # let's assume that the data generating process is as follows:
+    diversity_effect * diversity + heat_effect[heat] + rnorm(n(), 0, 1.5)
+  }) 
+```
+
+- The return object needs to te the same size as the number of rows for the design table.
+
+## Simulating the data 
+
+```{r}
+sim1 <- mysimprocess %>% 
+  simulate_rcrds(biomass = with_params())
+
+sim2 <- mysimprocess %>% 
+  simulate_rcrds(biomass = with_params(deffect = 3, heffects = c(-1, 3, 1)))
+```
+
+. . . 
+
+Visualise, model and explore the simulated data...
+
+```{r}
+library(ggplot2)
+g1 <- ggplot(sim1, aes(diversity, biomass, color = heat)) +
+  geom_jitter() +
+  geom_smooth(method = lm) +
+  scale_color_viridis_d() +
+  theme_classic(base_size = 18)
+```
+
+
+
+::: flex
+
+::: {.w-50}
+
+```{r}
+g1 + ggtitle("Sim 1")
+```
+
+
+:::
+
+::: {.w-50 .pl3}
+
+```{r}
+g1 %+% sim2 + ggtitle("Sim 2")
+```
+
+:::
+
+:::
+
 
 
 ## [<i class='fas fa-dna'></i> ArrayExpress: Public database of microarray experiments]{style="color:white;"} {background-color="#be830e"}
 
 <br><br>
 
-[<i class='fas fa-dice'></i> Your choice now:]{style="color:#f3f3f3;"}
+[<i class='fas fa-dice'></i> Choose an experiment:]{style="color:#f3f3f3;"}
 
 <center>
 
