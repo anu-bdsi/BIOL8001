@@ -6,6 +6,10 @@ format:
     width: 1920
     height: 1080
     self-contained: false
+    logo: images/logo/ANU_ Crest_Gold.png
+    title-slide-attributes:
+        data-background-image: "images/logo/anu-title-slide.png"
+        data-background-size: contain
     css: 
     - assets/custom.css
     - assets/tachyons-addon.css
