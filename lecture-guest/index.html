@@ -552,8 +552,23 @@ Low-sugar
 <section id="the-grammar-of-experimental-designs" class="title-slide slide level1 center" data-background-color="#be830e">
 <h1><span style="color:white;">The Grammar of Experimental Designs</span></h1>
 <center>
-<p><span style="font-size:1.2em;color: white"><i class="fas fa-lightbulb"></i> limited number of “words” (functions) = a variety of “sentences” (experimental designs)</span></p>
+<p><span style="font-size:1.2em;color: white"><i class="fas fa-lightbulb"></i> combine limited number of “words” (functions) to construct a variety of “sentences” (experimental designs)</span></p>
 </center>
+</section>
+
+<section id="edibble-package" class="title-slide slide level1 center">
+<h1><i class="fab fa-r-project"></i> <code>edibble</code> package <img src="images/edibble.png" height="120px" style="vertical-align:middle;"></h1>
+<pre><code>install.package("remotes")
+remotes::install_github("emitanaka/edibble")</code></pre>
+<div style="font-size:1.6em;">
+<ul>
+<li>The aim of <code>edibble</code> package is to make an <strong>e</strong>xperimental <strong>d</strong>esign t<strong>ibble</strong> (note: tidyverse version of a table).</li>
+</ul>
+</div>
+<div class="fragment">
+<p><i class="fas fa-exclamation-circle"></i> This package is evolving!</p>
+<p><i class="fas fa-comment"></i> So feel free to give comments whether it works for you or not.</p>
+</div>
 </section>
 
 <section>
@@ -587,8 +602,8 @@ Low-sugar
 </div><div class="column" style="width:56%;">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb1-1" class="hljs-ln-code"><a href="#cb1-1"></a><span class="fu">library</span>(edibble)</span>
-<span id="cb1-2" class="hljs-ln-code"><a href="#cb1-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a href="#cb2-1"></a><span class="fu">library</span>(edibble)</span>
+<span id="cb2-2" class="hljs-ln-code"><a href="#cb2-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -621,9 +636,9 @@ Low-sugar
 </ul>
 </div><div class="column" style="width:56%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a href="#cb2-1"></a><span class="fu">library</span>(edibble)</span>
-<span id="cb2-2" class="hljs-ln-code"><a href="#cb2-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3" class="hljs-ln-code"><a href="#cb2-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb3-1" class="hljs-ln-code"><a href="#cb3-1"></a><span class="fu">library</span>(edibble)</span>
+<span id="cb3-2" class="hljs-ln-code"><a href="#cb3-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3" class="hljs-ln-code"><a href="#cb3-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -655,11 +670,11 @@ Low-sugar
 </ul>
 </div><div class="column" style="width:56%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="4-5"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb3-1" class="hljs-ln-code"><a href="#cb3-1"></a><span class="fu">library</span>(edibble)</span>
-<span id="cb3-2" class="hljs-ln-code"><a href="#cb3-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-3" class="hljs-ln-code"><a href="#cb3-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-4" class="hljs-ln-code"><a href="#cb3-4"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
-<span id="cb3-5" class="hljs-ln-code"><a href="#cb3-5"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="4-5"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb4-1" class="hljs-ln-code"><a href="#cb4-1"></a><span class="fu">library</span>(edibble)</span>
+<span id="cb4-2" class="hljs-ln-code"><a href="#cb4-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3" class="hljs-ln-code"><a href="#cb4-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4" class="hljs-ln-code"><a href="#cb4-4"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
+<span id="cb4-5" class="hljs-ln-code"><a href="#cb4-5"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -691,12 +706,12 @@ Low-sugar
 </ul>
 </div><div class="column" style="width:56%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb4-1" class="hljs-ln-code"><a href="#cb4-1"></a><span class="fu">library</span>(edibble)</span>
-<span id="cb4-2" class="hljs-ln-code"><a href="#cb4-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-3" class="hljs-ln-code"><a href="#cb4-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-4" class="hljs-ln-code"><a href="#cb4-4"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
-<span id="cb4-5" class="hljs-ln-code"><a href="#cb4-5"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-6" class="hljs-ln-code"><a href="#cb4-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="st">"0°C"</span>, <span class="st">"1.5°C"</span>, <span class="st">"3°C"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb5-1" class="hljs-ln-code"><a href="#cb5-1"></a><span class="fu">library</span>(edibble)</span>
+<span id="cb5-2" class="hljs-ln-code"><a href="#cb5-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3" class="hljs-ln-code"><a href="#cb5-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4" class="hljs-ln-code"><a href="#cb5-4"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
+<span id="cb5-5" class="hljs-ln-code"><a href="#cb5-5"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6" class="hljs-ln-code"><a href="#cb5-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="st">"0°C"</span>, <span class="st">"1.5°C"</span>, <span class="st">"3°C"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -728,14 +743,14 @@ Low-sugar
 </ul>
 </div><div class="column" style="width:56%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="7-8"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb5-1" class="hljs-ln-code"><a href="#cb5-1"></a><span class="fu">library</span>(edibble)</span>
-<span id="cb5-2" class="hljs-ln-code"><a href="#cb5-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-3" class="hljs-ln-code"><a href="#cb5-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-4" class="hljs-ln-code"><a href="#cb5-4"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
-<span id="cb5-5" class="hljs-ln-code"><a href="#cb5-5"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-6" class="hljs-ln-code"><a href="#cb5-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="st">"0°C"</span>, <span class="st">"1.5°C"</span>, <span class="st">"3°C"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-7" class="hljs-ln-code"><a href="#cb5-7"></a>  <span class="fu">allot_trts</span>(diversity <span class="sc">~</span> plot,</span>
-<span id="cb5-8" class="hljs-ln-code"><a href="#cb5-8"></a>                  heat <span class="sc">~</span> subplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="7-8"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb6-1" class="hljs-ln-code"><a href="#cb6-1"></a><span class="fu">library</span>(edibble)</span>
+<span id="cb6-2" class="hljs-ln-code"><a href="#cb6-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-3" class="hljs-ln-code"><a href="#cb6-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-4" class="hljs-ln-code"><a href="#cb6-4"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
+<span id="cb6-5" class="hljs-ln-code"><a href="#cb6-5"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-6" class="hljs-ln-code"><a href="#cb6-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="st">"0°C"</span>, <span class="st">"1.5°C"</span>, <span class="st">"3°C"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-7" class="hljs-ln-code"><a href="#cb6-7"></a>  <span class="fu">allot_trts</span>(diversity <span class="sc">~</span> plot,</span>
+<span id="cb6-8" class="hljs-ln-code"><a href="#cb6-8"></a>                  heat <span class="sc">~</span> subplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -767,16 +782,16 @@ Low-sugar
 </ul>
 </div><div class="column" style="width:56%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="9-10"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb6-1" class="hljs-ln-code"><a href="#cb6-1"></a><span class="fu">library</span>(edibble)</span>
-<span id="cb6-2" class="hljs-ln-code"><a href="#cb6-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-3" class="hljs-ln-code"><a href="#cb6-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-4" class="hljs-ln-code"><a href="#cb6-4"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
-<span id="cb6-5" class="hljs-ln-code"><a href="#cb6-5"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-6" class="hljs-ln-code"><a href="#cb6-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="st">"0°C"</span>, <span class="st">"1.5°C"</span>, <span class="st">"3°C"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-7" class="hljs-ln-code"><a href="#cb6-7"></a>  <span class="fu">allot_trts</span>(diversity <span class="sc">~</span> plot,</span>
-<span id="cb6-8" class="hljs-ln-code"><a href="#cb6-8"></a>                  heat <span class="sc">~</span> subplot) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-9" class="hljs-ln-code"><a href="#cb6-9"></a>  <span class="co"># guessing treatment were randomly allocated</span></span>
-<span id="cb6-10" class="hljs-ln-code"><a href="#cb6-10"></a>  <span class="fu">assign_trts</span>(<span class="at">order =</span> <span class="st">"random"</span>, <span class="at">seed =</span> <span class="dv">2022</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="9-10"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb7-1" class="hljs-ln-code"><a href="#cb7-1"></a><span class="fu">library</span>(edibble)</span>
+<span id="cb7-2" class="hljs-ln-code"><a href="#cb7-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3" class="hljs-ln-code"><a href="#cb7-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-4" class="hljs-ln-code"><a href="#cb7-4"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
+<span id="cb7-5" class="hljs-ln-code"><a href="#cb7-5"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-6" class="hljs-ln-code"><a href="#cb7-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="st">"0°C"</span>, <span class="st">"1.5°C"</span>, <span class="st">"3°C"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-7" class="hljs-ln-code"><a href="#cb7-7"></a>  <span class="fu">allot_trts</span>(diversity <span class="sc">~</span> plot,</span>
+<span id="cb7-8" class="hljs-ln-code"><a href="#cb7-8"></a>                  heat <span class="sc">~</span> subplot) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-9" class="hljs-ln-code"><a href="#cb7-9"></a>  <span class="co"># guessing treatment were randomly allocated</span></span>
+<span id="cb7-10" class="hljs-ln-code"><a href="#cb7-10"></a>  <span class="fu">assign_trts</span>(<span class="at">order =</span> <span class="st">"random"</span>, <span class="at">seed =</span> <span class="dv">2023</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -808,17 +823,17 @@ Low-sugar
 </ul>
 </div><div class="column" style="width:56%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="11"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb7-1" class="hljs-ln-code"><a href="#cb7-1"></a><span class="fu">library</span>(edibble)</span>
-<span id="cb7-2" class="hljs-ln-code"><a href="#cb7-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-3" class="hljs-ln-code"><a href="#cb7-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-4" class="hljs-ln-code"><a href="#cb7-4"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
-<span id="cb7-5" class="hljs-ln-code"><a href="#cb7-5"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-6" class="hljs-ln-code"><a href="#cb7-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="st">"0°C"</span>, <span class="st">"1.5°C"</span>, <span class="st">"3°C"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-7" class="hljs-ln-code"><a href="#cb7-7"></a>  <span class="fu">allot_trts</span>(diversity <span class="sc">~</span> plot,</span>
-<span id="cb7-8" class="hljs-ln-code"><a href="#cb7-8"></a>                  heat <span class="sc">~</span> subplot) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-9" class="hljs-ln-code"><a href="#cb7-9"></a>  <span class="co"># guessing treatment were randomly allocated</span></span>
-<span id="cb7-10" class="hljs-ln-code"><a href="#cb7-10"></a>  <span class="fu">assign_trts</span>(<span class="at">order =</span> <span class="st">"random"</span>, <span class="at">seed =</span> <span class="dv">2022</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-11" class="hljs-ln-code"><a href="#cb7-11"></a>  <span class="fu">serve_table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="11"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb8-1" class="hljs-ln-code"><a href="#cb8-1"></a><span class="fu">library</span>(edibble)</span>
+<span id="cb8-2" class="hljs-ln-code"><a href="#cb8-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3" class="hljs-ln-code"><a href="#cb8-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-4" class="hljs-ln-code"><a href="#cb8-4"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
+<span id="cb8-5" class="hljs-ln-code"><a href="#cb8-5"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-6" class="hljs-ln-code"><a href="#cb8-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="st">"0°C"</span>, <span class="st">"1.5°C"</span>, <span class="st">"3°C"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-7" class="hljs-ln-code"><a href="#cb8-7"></a>  <span class="fu">allot_trts</span>(diversity <span class="sc">~</span> plot,</span>
+<span id="cb8-8" class="hljs-ln-code"><a href="#cb8-8"></a>                  heat <span class="sc">~</span> subplot) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-9" class="hljs-ln-code"><a href="#cb8-9"></a>  <span class="co"># guessing treatment were randomly allocated</span></span>
+<span id="cb8-10" class="hljs-ln-code"><a href="#cb8-10"></a>  <span class="fu">assign_trts</span>(<span class="at">order =</span> <span class="st">"random"</span>, <span class="at">seed =</span> <span class="dv">2023</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-11" class="hljs-ln-code"><a href="#cb8-11"></a>  <span class="fu">serve_table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <style type="text/css">
@@ -847,10 +862,91 @@ Low-sugar
 <div class="absolute bottom-1 right-1 pa3 ba" style="background-color:white;">
 <p>This is in fact a <strong>split-plot design</strong>!</p>
 </div>
-<p><img src="_extensions/anu-links/anu-light/logo/ANU_ Crest_Gold.png" class="slide-logo"></p>
-<div class="footer footer-default">
-
 </div>
+</section>
+<section id="whats-the-response" class="slide level2">
+<h2>What’s the response?</h2>
+<ul>
+<li>We don’t really need to know what the response to design the experiment.</li>
+<li>But it’s better for experimental planning.</li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p>Soil samples were taken in August 2011 and 2012 (peak of the growing season) for soil microbial measurements and enzyme assays. From each subplot, nine (2011) or six (2012) soil samples were taken.</p>
+<p>Approximately 4.5 g soil fresh mass was used to measure soil microbial biomass…</p>
+</blockquote>
+</div>
+<div class="fragment">
+<ul>
+<li>First define the units that the response is going to be recorded on.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="5-13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(edibble)</span>
+<span id="cb9-2"><a href="#cb9-2"></a>mydesign <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>), </span>
+<span id="cb9-4"><a href="#cb9-4"></a>           <span class="at">heat =</span> <span class="fu">c</span>(<span class="st">"0°C"</span>, <span class="st">"1.5°C"</span>, <span class="st">"3°C"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
+<span id="cb9-6"><a href="#cb9-6"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>),</span>
+<span id="cb9-7"><a href="#cb9-7"></a>            <span class="at">year =</span> <span class="fu">c</span>(<span class="st">"2011"</span>, <span class="st">"2012"</span>),</span>
+<span id="cb9-8"><a href="#cb9-8"></a>            <span class="at">visit =</span> <span class="fu">crossed_by</span>(subplot, year),</span>
+<span id="cb9-9"><a href="#cb9-9"></a>            <span class="co"># okay this is awkward.. (might need to improve this)</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>            <span class="co"># visit 1-81 = 2011, visit 82-162 = 2012</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a>            <span class="at">sample =</span> <span class="fu">nested_in</span>(visit,</span>
+<span id="cb9-12"><a href="#cb9-12"></a>                               <span class="dv">1</span><span class="sc">:</span><span class="dv">81</span> <span class="sc">~</span> <span class="dv">9</span>, </span>
+<span id="cb9-13"><a href="#cb9-13"></a>                               <span class="dv">82</span><span class="sc">:</span><span class="dv">162</span> <span class="sc">~</span> <span class="dv">6</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-14"><a href="#cb9-14"></a>  <span class="co"># short hand for allot_trts() + assign_trts() + serve_table()</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a>  <span class="fu">allot_table</span>(diversity <span class="sc">~</span> plot,</span>
+<span id="cb9-16"><a href="#cb9-16"></a>                  heat <span class="sc">~</span> subplot,</span>
+<span id="cb9-17"><a href="#cb9-17"></a>              <span class="at">seed =</span> <span class="dv">2023</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="setting-the-record-factor" class="slide level2">
+<h2>Setting the record factor</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>myplan <span class="ot">&lt;-</span> mydesign <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">set_rcrds</span>(<span class="at">biomass =</span> sample) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">expect_rcrds</span>(biomass <span class="sc">&gt;=</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<ul>
+<li>Export to data with the encoded data validation rules:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">export_design</span>(myplan, <span class="st">"mydata.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="simulating-an-experiment" class="slide level2">
+<h2>Simulating an experiment</h2>
+<ul>
+<li>Think of your <strong>statistical analysis plan</strong> at the designing stage!</li>
+<li>Simulate your experiment … bla bla…</li>
+</ul>
+</section>
+<section id="arrayexpress-public-database-of-microarray-experiments" class="slide level2" data-background-color="#be830e">
+<h2><span style="color:white;"><i class="fas fa-dna"></i> ArrayExpress: Public database of microarray experiments</span></h2>
+<p><br><br></p>
+<p><span style="color:#f3f3f3;"><i class="fas fa-dice"></i> Your choice now:</span></p>
+<center>
+<p><a href="https://www.ebi.ac.uk/biostudies/arrayexpress/studies" class="f-subheadline" style="color:white;">https://www.ebi.ac.uk/biostudies/arrayexpress/studies</a></p>
+</center>
+</section>
+<section id="materials" class="slide level2" data-background-color="#be830e">
+<h2><span style="color:white;"><i class="fas fa-link"></i> Materials</span></h2>
+<div style="color:#f3f3f3;">
+<ul>
+<li>These slides are written using <a href="https://quarto.org/docs/presentations/revealjs/" style="color:white;"><strong>Quarto</strong> (next generation R markdown) <strong>revealjs</strong></a>.</li>
+<li>The slides available at <a href="https://anu-links.github.io/BIOL8001/lecture-guest" style="color:white;"><strong>https://anu-links.github.io/BIOL8001/lecture-guest</strong></a>.</li>
+<li>All materials to reproduce this slide can be found <a href="https://github.com/anu-links/BIOL8001/blob/main/lecture-guest/" style="color:white;"><strong>here</strong></a>.</li>
+<li>The code that generate this slide is shown below:</li>
+</ul>
+</div>
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fanu-links%2FBIOL8001%2Fblob%2Fmain%2Flecture-guest%2Flecture-guest.qmd&amp;style=default&amp;type=code&amp;showBorder=on&amp;showLineNumbers=on&amp;showFileMeta=on&amp;showFullPath=on&amp;showCopy=on"></script>
+<p><span style="color:white;"><i class="fas fa-envelope"></i> emi.tanaka@anu.edu.au <i class="fab fa-github"></i> emitanaka <i class="fab fa-twitter"></i> <span class="citation" data-cites="statsgen">@statsgen</span> <i class="fab fa-mastodon"></i> fosstodon.org/<span class="citation" data-cites="emitanaka">@emitanaka</span></span></p>
+
+<img src="_extensions/anu-links/anu-light/logo/ANU_ Crest_Gold.png" class="slide-logo r-stretch"><div class="footer footer-default">
+
 </div>
 </section></section>
     </div>

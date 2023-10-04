@@ -261,9 +261,32 @@ cat(readLines("images/comm-model-id.svg")[c(-1, -2)], "\n")
 
 <center>
 
-[<i class='fas fa-lightbulb'></i> limited number of "words" (functions) = a variety of "sentences" (experimental designs)]{style="font-size:1.2em;color: white"}
+[<i class='fas fa-lightbulb'></i> combine limited number of "words" (functions) to construct a variety of "sentences" (experimental designs)]{style="font-size:1.2em;color: white"}
 
 </center>
+
+# <i class='fab fa-r-project'></i> `edibble` package <img src="images/edibble.png" height="120px" style="vertical-align:middle;"> 
+
+```
+install.package("remotes")
+remotes::install_github("emitanaka/edibble")
+```
+
+::: {style="font-size:1.6em;"}
+
+- The aim of `edibble` package is to make an **e**xperimental **d**esign t**ibble** (note: tidyverse version of a table).
+
+:::
+
+::: fragment
+
+<i class='fas fa-exclamation-circle'></i> This package is evolving! 
+
+<i class='fas fa-comment'></i> So feel free to give comments whether it works for you or not.
+
+:::
+
+
 
 # [<i class='fab fa-pagelines'></i> Let's get started with a _real example_]{style="color:white;"} {background-color="#be830e"}
 
@@ -548,7 +571,7 @@ design("Steinauer et al. 2015") %>%
   allot_trts(diversity ~ plot,
                   heat ~ subplot) %>% 
   # guessing treatment were randomly allocated
-  assign_trts(order = "random", seed = 2022)
+  assign_trts(order = "random", seed = 2023)
 ```
 
 
@@ -565,7 +588,7 @@ design("Steinauer et al. 2015") %>%
   allot_trts(diversity ~ plot,
                   heat ~ subplot) %>% 
   # guessing treatment were randomly allocated
-  assign_trts(order = "random", seed = 2022)
+  assign_trts(order = "random", seed = 2023)
 ```
 :::
 
@@ -604,7 +627,7 @@ design("Steinauer et al. 2015") %>%
   allot_trts(diversity ~ plot,
                   heat ~ subplot) %>% 
   # guessing treatment were randomly allocated
-  assign_trts(order = "random", seed = 2022) %>% 
+  assign_trts(order = "random", seed = 2023) %>% 
   serve_table()
 ```
 
@@ -630,7 +653,7 @@ design("Steinauer et al. 2015") %>%
   allot_trts(diversity ~ plot,
                   heat ~ subplot) %>% 
   # guessing treatment were randomly allocated
-  assign_trts(order = "random", seed = 2022) %>% 
+  assign_trts(order = "random", seed = 2023) %>% 
   serve_table()
 ```
 :::
@@ -649,4 +672,95 @@ This is in fact a **split-plot design**!
 :::
 
 
+## What's the response?
 
+- We don't really need to know what the response to design the experiment.
+- But it's better for experimental planning.
+
+. . . 
+
+<blockquote>
+
+Soil samples were taken in August 2011 and 2012 (peak of the growing season) for soil microbial measurements and enzyme assays. From each subplot, nine (2011) or six (2012) soil samples were taken.
+
+Approximately 4.5 g soil fresh mass was used to measure soil microbial biomass...
+
+</blockquote>
+
+. . . 
+
+- First define the units that the response is going to be recorded on.
+
+```{r}
+#| code-line-numbers: 5-13
+library(edibble)
+mydesign <- design("Steinauer et al. 2015") %>% 
+  set_trts(diversity = c(1, 4, 16), 
+           heat = c("0°C", "1.5°C", "3°C")) %>% 
+  set_units(plot = 27,
+            subplot = nested_in(plot, 3),
+            year = c("2011", "2012"),
+            visit = crossed_by(subplot, year),
+            # okay this is awkward.. (might need to improve this)
+            # visit 1-81 = 2011, visit 82-162 = 2012
+            sample = nested_in(visit,
+                               1:81 ~ 9, 
+                               82:162 ~ 6)) %>% 
+  # short hand for allot_trts() + assign_trts() + serve_table()
+  allot_table(diversity ~ plot,
+                  heat ~ subplot,
+              seed = 2023)
+```
+
+
+## Setting the record factor
+
+```{r}
+myplan <- mydesign %>% 
+  set_rcrds(biomass = sample) %>% 
+  expect_rcrds(biomass >= 0)
+```
+
+. . . 
+
+- Export to data with the encoded data validation rules:
+
+```{r, eval = FALSE}
+export_design(myplan, "mydata.xlsx")
+```
+
+## Simulating an experiment
+
+- Think of your **statistical analysis plan** at the designing stage!
+- Simulate your experiment ... bla bla...
+
+
+## [<i class='fas fa-dna'></i> ArrayExpress: Public database of microarray experiments]{style="color:white;"} {background-color="#be830e"}
+
+<br><br>
+
+[<i class='fas fa-dice'></i> Your choice now:]{style="color:#f3f3f3;"}
+
+<center>
+
+[https://www.ebi.ac.uk/biostudies/arrayexpress/studies](https://www.ebi.ac.uk/biostudies/arrayexpress/studies){.f-subheadline style="color:white;"}
+
+
+</center>
+
+
+## [<i class='fas fa-link'></i> Materials]{style="color:white;"} {background-color="#be830e"}
+
+::: {style="color:#f3f3f3;"}
+
+- These slides are written using [**Quarto** (next generation R markdown) **revealjs**](https://quarto.org/docs/presentations/revealjs/){style="color:white;"}. 
+- The slides available at [**https://anu-links.github.io/BIOL8001/lecture-guest**](https://anu-links.github.io/BIOL8001/lecture-guest){style="color:white;"}.
+- All materials to reproduce this slide can be found [**here**](https://github.com/anu-links/BIOL8001/blob/main/lecture-guest/){style="color:white;"}.
+- The code that generate this slide is shown below: 
+
+:::
+
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fanu-links%2FBIOL8001%2Fblob%2Fmain%2Flecture-guest%2Flecture-guest.qmd&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+
+
+[<i class='fas fa-envelope'></i> emi.tanaka@anu.edu.au <i class='fab fa-github'></i> emitanaka <i class='fab fa-twitter'></i> @statsgen <i class='fab fa-mastodon'></i> fosstodon.org/@emitanaka]{style="color:white;"}
