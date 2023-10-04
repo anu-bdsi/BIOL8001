@@ -1,0 +1,651 @@
+---
+title: The Grammar of Experimental Designs
+subtitle: BIOL8001 Consulting in Quantitative Biology
+format:
+  anu-light-revealjs:
+    width: 1920
+    height: 1080
+    self-contained: false
+    css: 
+    - assets/custom.css
+    - assets/tachyons-addon.css
+    include-after: |
+      <link rel="stylesheet" href="assets/syntax-highlight.css">
+      <link rel="stylesheet" href="assets/fontawesome-free-6.1.1-web/css/all.min.css">
+      <script src="assets/fontawesome-free-6.1.1-web/js/all.min.js"></script>
+author: Emi Tanaka
+institute: Biological Data Science Institute
+date: 10/9/2023
+date-format: "D[th] MMMM YYYY"
+execute:
+  echo: true
+---
+
+```{r setup, include = FALSE}
+library(tidyverse)
+actor_shell <- function(fn, wo) {
+  force(fn)
+  force(wo)
+  function(w, flip = FALSE, other = "") {
+    w <- ifelse(missing(w), wo, w)
+    glue::glue('<img src="images/stickman/{fn}" {other} width="{w}" class="{ifelse(flip, "img-hor", "")}">')
+  }
+}
+domain <- actor_shell("domain1.svg", "100px")
+stat <- actor_shell("statistician1.svg", "120px")
+analyst <- actor_shell("statistician2.svg", "100px")
+tech <- actor_shell("technician1.svg", "220px")
+tech2 <- actor_shell("technician2.svg", "100px")
+actor1 <- actor_shell("actor1.svg", "120px")
+actor2 <- actor_shell("actor2.svg", "120px")
+
+rotating_text <- function(x, align = "center") {
+  glue::glue('
+<div style="overflow: hidden; height: 1.2em;">
+<ul class="content_list {align}" style="text-align: {align}">
+<li class="content_list_item">{x[1]}</li>
+<li class="content_list_item">{x[2]}</li>
+<li class="content_list_item">{x[3]}</li>
+<li class="content_list_item">{x[4]}</li>
+</ul>
+</div>')
+}
+
+fa_list <- function(x, incremental = FALSE) {
+  icons <- names(x)
+  fragment <- ifelse(incremental, "fragment", "")
+  items <- glue::glue('<li class="{fragment}"><span class="fa-li"><i class="{icons}"></i></span> {x}</li>')
+  paste('<ul class="fa-ul">', 
+        paste(items, collapse = "\n"),
+        "</ul>", sep = "\n")
+}
+
+asciicast::init_knitr_engine(
+  startup = quote({
+      library(edibble)
+      options(tibble.width = Inf,
+              tibble.print_max = Inf)
+    }),
+  echo = FALSE,
+  echo_input = FALSE
+  )
+```
+
+
+## {auto-animate=true}
+
+::: {.fragment .fade-up fragment-index=1}
+
+<h2>The [Originator]{.blue2} of an Experiment</h2>
+
+:::
+
+::: flex
+
+::: w-20
+
+`r domain(w = "200px")`
+
+:::
+
+::: w-80 
+
+<Br><br>
+
+::: f3
+
+`r rotating_text(c('[**What diet** lowers insulin?]{.speech}', '[**Is the lockout laws effective** to reduce alcohol-fuelled violence?]{.speech}', '[**Which brand** of washing powder is most effective for cleaning clothes?]{.speech}', '[**How much fertilizer** should you use for optimal crop yield?]{.speech}'), align = 'left!important')`
+
+:::
+
+
+<br><br> 
+
+::: {.fragment .fade-up fragment-index=1}
+
+The [**"domain expert"**]{.blue2} drives the experimental objective and has the intricate knowledge about the subject area
+
+:::
+
+:::
+
+
+:::
+
+::: {.absolute .bottom-0 .f5}
+
+Stick person images by <a href="https://pixabay.com/users/openclipart-vectors-30363/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=151793">OpenClipart-Vectors</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=151793">Pixabay</a>
+:::
+
+
+## The [Designer]{.ruby2} of the Experiment {auto-animate=true}
+
+::: flex
+
+
+::: w-80 
+
+[Let there be an **experimental design**!]{.speech .f3 .fr}
+
+<br><br>
+
+The [**"statistican"**]{.ruby2} creates the experimental design layout after taking into account the statistical and practical constraints.
+
+:::
+
+::: w-20
+
+`r stat(w = "100%", flip = TRUE)`
+
+:::
+
+:::
+
+
+## The [Executor]{.green2} of the Experiment {auto-animate=true}
+
+::: flex
+
+::: w-60 
+
+<br><br>
+
+The [**"technician"**]{.green2} carries out the experiment and collects the data.
+
+:::
+
+::: w-40
+
+`r tech2(w = "200px", flip = TRUE)`
+
+:::
+
+:::
+
+
+
+
+
+## The [Digester]{.red2} of the Experiment {auto-animate=true}
+
+::: flex
+
+::: w-80 
+
+<br><br>
+
+The [**"analyst"**]{.red2} analyses the data after the data is collected.
+
+:::
+
+::: w-20
+
+`r analyst(w = "200px", flip = TRUE)`
+
+:::
+
+:::
+
+
+
+## The actors are purely illustrative {auto-animate=true}
+
+
+`r domain(w = "200px", other = 'data-id="person3"')` `r stat(w = "280px", flip = TRUE, other = 'data-id="person2"')` `r tech2(w = "200px", flip = TRUE, other = 'data-id="person1"')` `r analyst(w = "200px", flip = TRUE, other = 'data-id="person2"')`
+
+
+
+## [Roles]{.blue} may be fuzzy {auto-animate=true}
+
+In practice:
+
+* multiple people can take on each role, 
+* one person can take on multiple roles, and/or 
+* a person in the role may not specialise in that role.
+
+
+
+<center>
+
+`r tech(w = "200px", other = 'data-id="person1"')`
+`r actor1(w = "150px", other = 'data-id="person2"')`
+`r actor2(w = "200px", other = 'data-id="person3"')`
+
+</center>
+
+
+
+
+## [Communications]{.blue} may be fuzzy {auto-animate=true}
+
+
+<center>
+````{=html}
+```{r, results = "asis", echo = FALSE}
+cat(readLines("images/comm-model-id.svg")[c(-1, -2)], "\n")
+```
+````
+</center>
+
+
+
+## What diet works best for lowering insulin? {auto-animate=true}
+
+<div class="control-diet" data-id="trt1">Control</div>
+<div class="sugar-diet" data-id="trt2">Low-sugar</div>
+
+`r fa_list(c("fa-solid fa-crosshairs fa-pulse" = "_Process:_ Measure insulin level after 4 weeks of subjects under either the control or high-sugar diet", "fa-solid fa-cubes" = "_Design:_ Randomise treatments (control or high-sugar diet) to subjects"))`
+
+
+## What diet works best for lowering insulin? {auto-animate=true}
+
+<div class="fat-diet">High-fat</div>
+<div class="control-diet" data-id="trt1">Control</div>
+<div class="sugar-diet" data-id="trt2">Low-sugar</div>
+
+`r fa_list(c("fa-solid fa-spinner fa-pulse" = "In practice, experiments can be modified in consultation", "fa-solid fa-layer-group" = "We need to take into account the _experimental structure_ for appropriate randomisation and/or optimisation"), incremental = TRUE)`
+
+
+::: {.fragment .f-headline style="padding-left:20%;padding-right:20%;text-align:center;"}
+
+
+<i class="fa-solid fa-comments"></i> **_Communication_** is a key to get the most out of the experimental data
+
+:::
+
+
+
+
+# [The Grammar of Experimental Designs]{style="color:white;"} {background-color="#be830e"}
+
+<center>
+
+[<i class='fas fa-lightbulb'></i> limited number of "words" (functions) = a variety of "sentences" (experimental designs)]{style="font-size:1.2em;color: white"}
+
+</center>
+
+# [<i class='fab fa-pagelines'></i> Let's get started with a _real example_]{style="color:white;"} {background-color="#be830e"}
+
+## An Experiment in Ecology
+
+<i class='fas fa-newspaper'></i> Steinauer et al. (2015) Plant diversity effects on soil microbial functions and enzymes are stronger than warming in a grassland experiment. *Ecology* 96 (1) 99-112
+
+
+::: {.box .scroll style="height:70%;"}
+
+*Experimental design*
+
+The present study took place in the BAC experiment site established at the Cedar Creek Ecosystem Science Reserve, Minnesota, USA. The site occurs on a glacial outwash plain with sandy soils. Mean temperature during the growing season (April–September) was 15.98°C in 2011 and 17.18°C in 2012. Precipitation during the growing season was 721 mm in 2011. The growing season in 2012 was considerably drier, with 545 mm rainfall.
+
+Experimental plots (9×9 m) were planted in 1994 and 1995 with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed below (Tilman et al. 2001). The grassland prairie species belonged to one of five plant functional groups: C<sub>3</sub> grasses (_Agropyron smithii_ Tydb., _Elymus canadensis_ L., _Koeleria cristata_ (Ledeb.) Schult., _Poa pratensis_ L.), C<sub>4</sub> grasses (_Andropogon gerardii_ Vitman., _Panicum virgatum_ L., _Schizachyrium scoparium_ (Michx.) Nash, _Sorghas-trum nutans_ (L.) Nash), legumes (_Amorpha canescens_ Pursh., _Lespedeza capitata_ Michx., _Lupinus perennis_ L., _Petalostemum purpureum_ (Vent.) Rydb., _Petalostemum villosum_ Spreng.), nonlegume forbs (_Achillea millefolium_ L., _Asclepias  tuberosa_ L., _Liatris  aspera_ Michx., _Monarda fistulosa_ L., _Soldidago rigida_ L.), and woody species (_Quercus ellipsoidalis_ E. J. Hill, _Quercus macro-carpa_ Michx.). The individuals of those two woody species (_Quercus_ spp.), which were small in size and rare because of low survival, were removed from all plots in which they occurred in 2010.
+
+In addition to the manipulation of plant diversity, the plots were divided into three subplots (2.5×3.0 m). Heat treatments were applied from March to November each year, beginning in 2009, using infrared lamps 1.8 m above ground emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-freesoils) and 1200 W (which caused a 3°C increase; Valpine and Harte 2001, Kimball 2005, Whittingtonet al. 2013) to increase the surface soil temperature of each subplot (see Plate 1). To account for possible shading effects, metal flanges and frames were hungover control subplots. An average across all vegetated plots, temperature manipulations elevated soil temperature at 1 cm depth by 1.18°C in the low warming (+1.5°C) treatment and by 2.69°C in the high warming (+3°C) treatment, and at 10 cm depth temperature by 1.00°C in the low warming (+1.5°C) treatment and by 2.16°C in the high warming (+3°C) treatment.
+
+Soil  samples  of  three  subplots  in  each  of  27 experimental plots were taken; due to technical difficulties we could only analyze 66 samples out of 81 existing subplots (monoculture, 10 replicates in ambient +0°C treatment, eight replicates in +1.5°C treatment, nine replicates in +3°C treatment; four species mixture, six replicates in ambient +0°C treatment, six replicates in +1.5°C treatment, seven replicates in +3°C treatment; 16 species mixture, six replicates in ambient +0°C treatment, six replicates in +1.5°C treatment, eight replicates in +3°C treatment). The BAC plots are a representative subset of the plots in the biodiversity experiment E120 at Cedar Creek, which were assembled as random draws of a given number of species from the species pool (Zak et al. 2003). Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+
+:::
+
+
+## Experimental design with `edibble` {auto-animate=true}
+
+:::: {.columns}
+
+::: {.column .box width="40%" .nonincremental}
+
+*Experimental design* **(condensed version)**
+
+* Experimental plots were planted with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
+* Plots were divided into three subplots
+* Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)
+* Soil  samples  of  three  subplots  in  each  of  27 experimental plots were taken
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+
+:::
+
+::: {.column width="56%"}
+
+::: fragment
+
+```{r des1}
+#| eval: false
+#| code-line-numbers: "1|2"
+library(edibble)
+design("Steinauer et al. 2015")
+```
+:::
+
+::: fragment
+
+```{asciicast, out.width = "100%"}
+#' Cols: 40
+library(edibble)
+design("Steinauer et al. 2015")
+```
+
+:::
+:::
+
+::::
+
+
+## Experimental design with `edibble` {visibility="uncounted" auto-animate=true}
+
+:::: {.columns}
+
+::: {.column .box width="40%" .nonincremental}
+
+*Experimental design* **(condensed version)**
+
+* Experimental plots were planted with different plant communities spanning a [plant diversity gradient of one, four, and 16 species]{.red}, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
+* Plots were divided into three subplots
+* Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)
+* Soil  samples  of  three  subplots  in  each  of  27 experimental plots were taken
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+
+:::
+
+::: {.column width="56%"}
+
+
+```{r des2}
+#| eval: false
+#| code-line-numbers: "3"
+library(edibble)
+design("Steinauer et al. 2015") %>% 
+  set_trts(diversity = c(1, 4, 16))
+```
+
+
+::: fragment
+
+```{asciicast, out.width = "100%"}
+#' Cols: 40
+library(edibble)
+design("Steinauer et al. 2015") %>% 
+  set_trts(diversity = c(1, 4, 16))
+```
+:::
+
+:::
+
+::::
+
+## Experimental design with `edibble` {visibility="uncounted" auto-animate=true}
+
+:::: {.columns}
+
+::: {.column .box width="40%" .nonincremental}
+
+*Experimental design* **(condensed version)**
+
+* Experimental plots were planted with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
+* [Plots were divided into three subplots]{.red}
+* Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)
+* Soil  samples  of  three  subplots  in  each  of  [27 experimental plots]{.red} were taken
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+
+:::
+
+::: {.column width="56%"}
+
+
+```{r des3}
+#| eval: false
+#| code-line-numbers: "4-5"
+library(edibble)
+design("Steinauer et al. 2015") %>% 
+  set_trts(diversity = c(1, 4, 16)) %>% 
+  set_units(plot = 27,
+            subplot = nested_in(plot, 3))
+```
+
+
+::: fragment
+
+```{asciicast, out.width = "100%"}
+#' Cols: 40
+library(edibble)
+design("Steinauer et al. 2015") %>% 
+  set_trts(diversity = c(1, 4, 16)) %>% 
+  set_units(plot = 27,
+            subplot = nested_in(plot, 3))
+```
+:::
+
+:::
+
+::::
+
+## Experimental design with `edibble` {visibility="uncounted" auto-animate=true}
+
+:::: {.columns}
+
+::: {.column .box width="40%" .nonincremental}
+
+*Experimental design* **(condensed version)**
+
+* Experimental plots were planted with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
+* Plots were divided into three subplots
+* Heat treatments were applied to subplots [emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)]{.red}
+* Soil  samples  of  three  subplots  in  each  of  27 experimental plots were taken
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+
+:::
+
+::: {.column width="56%"}
+
+
+```{r des4}
+#| eval: false
+#| code-line-numbers: "6"
+library(edibble)
+design("Steinauer et al. 2015") %>% 
+  set_trts(diversity = c(1, 4, 16)) %>% 
+  set_units(plot = 27,
+            subplot = nested_in(plot, 3)) %>% 
+  set_trts(heat = c("0°C", "1.5°C", "3°C"))
+```
+
+
+::: fragment
+
+```{asciicast, out.width = "100%"}
+#' Cols: 40
+library(edibble)
+design("Steinauer et al. 2015") %>% 
+  set_trts(diversity = c(1, 4, 16)) %>% 
+  set_units(plot = 27,
+            subplot = nested_in(plot, 3)) %>% 
+  set_trts(heat = c("0°C", "1.5°C", "3°C"))
+```
+:::
+
+:::
+
+::::
+
+## Experimental design with `edibble` {visibility="uncounted" auto-animate=true}
+
+:::: {.columns}
+
+::: {.column .box width="40%" .nonincremental}
+
+*Experimental design* **(condensed version)**
+
+* Experimental [plots were planted with different plant communities]{.red} spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
+* Plots were divided into three subplots
+* [Heat treatments were applied to subplots]{.red} emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)
+* Soil  samples  of  three  subplots  in  each  of  27 experimental plots were taken
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+
+:::
+
+::: {.column width="56%"}
+
+
+```{r des5}
+#| eval: false
+#| code-line-numbers: "7-8"
+library(edibble)
+design("Steinauer et al. 2015") %>% 
+  set_trts(diversity = c(1, 4, 16)) %>% 
+  set_units(plot = 27,
+            subplot = nested_in(plot, 3)) %>% 
+  set_trts(heat = c("0°C", "1.5°C", "3°C")) %>% 
+  allot_trts(diversity ~ plot,
+                  heat ~ subplot)
+```
+
+
+::: fragment
+
+```{asciicast, out.width = "100%"}
+#' Cols: 40
+library(edibble)
+design("Steinauer et al. 2015") %>% 
+  set_trts(diversity = c(1, 4, 16)) %>% 
+  set_units(plot = 27,
+            subplot = nested_in(plot, 3)) %>% 
+  set_trts(heat = c("0°C", "1.5°C", "3°C")) %>% 
+  allot_trts(diversity ~ plot,
+                  heat ~ subplot)
+```
+:::
+
+:::
+
+::::
+
+## Experimental design with `edibble` {visibility="uncounted" auto-animate=true}
+
+:::: {.columns}
+
+::: {.column .box width="40%" .nonincremental}
+
+*Experimental design* **(condensed version)**
+
+* Experimental plots were planted with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
+* Plots were divided into three subplots
+* Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)
+* Soil  samples  of  three  subplots  in  each  of  27 experimental plots were taken
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+
+:::
+
+::: {.column width="56%"}
+
+
+```{r des6}
+#| eval: false
+#| code-line-numbers: "9-10"
+library(edibble)
+design("Steinauer et al. 2015") %>% 
+  set_trts(diversity = c(1, 4, 16)) %>% 
+  set_units(plot = 27,
+            subplot = nested_in(plot, 3)) %>% 
+  set_trts(heat = c("0°C", "1.5°C", "3°C")) %>% 
+  allot_trts(diversity ~ plot,
+                  heat ~ subplot) %>% 
+  # guessing treatment were randomly allocated
+  assign_trts(order = "random", seed = 2022)
+```
+
+
+::: fragment
+
+```{asciicast, out.width = "100%"}
+#' Cols: 40
+library(edibble)
+design("Steinauer et al. 2015") %>% 
+  set_trts(diversity = c(1, 4, 16)) %>% 
+  set_units(plot = 27,
+            subplot = nested_in(plot, 3)) %>% 
+  set_trts(heat = c("0°C", "1.5°C", "3°C")) %>% 
+  allot_trts(diversity ~ plot,
+                  heat ~ subplot) %>% 
+  # guessing treatment were randomly allocated
+  assign_trts(order = "random", seed = 2022)
+```
+:::
+
+:::
+
+::::
+
+## Experimental design with `edibble` {visibility="uncounted" auto-animate=true}
+
+:::: {.columns}
+
+::: {.column .box width="40%" .nonincremental}
+
+*Experimental design* **(condensed version)**
+
+* Experimental plots were planted with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
+* Plots were divided into three subplots
+* Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)
+* Soil  samples  of  three  subplots  in  each  of  27 experimental plots were taken
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+
+:::
+
+::: {.column width="56%"}
+
+
+```{r des7}
+#| eval: false
+#| code-line-numbers: "11"
+library(edibble)
+design("Steinauer et al. 2015") %>% 
+  set_trts(diversity = c(1, 4, 16)) %>% 
+  set_units(plot = 27,
+            subplot = nested_in(plot, 3)) %>% 
+  set_trts(heat = c("0°C", "1.5°C", "3°C")) %>% 
+  allot_trts(diversity ~ plot,
+                  heat ~ subplot) %>% 
+  # guessing treatment were randomly allocated
+  assign_trts(order = "random", seed = 2022) %>% 
+  serve_table()
+```
+
+```{css}
+#| echo: false
+.scroll-box .cell-output-display {
+  height: 400px;
+  overflow: scroll;
+}
+```
+
+::: {.fragment}
+
+```{asciicast, out.width = "100%"}
+#| classes: scroll-box
+#' Cols: 50
+library(edibble)
+design("Steinauer et al. 2015") %>% 
+  set_trts(diversity = c(1, 4, 16)) %>% 
+  set_units(plot = 27,
+            subplot = nested_in(plot, 3)) %>% 
+  set_trts(heat = c("0°C", "1.5°C", "3°C")) %>% 
+  allot_trts(diversity ~ plot,
+                  heat ~ subplot) %>% 
+  # guessing treatment were randomly allocated
+  assign_trts(order = "random", seed = 2022) %>% 
+  serve_table()
+```
+:::
+
+:::
+
+::::
+
+. . . 
+
+
+::: {.absolute .bottom-1 .right-1 .pa3 .ba style="background-color:white;"}
+
+This is in fact a **split-plot design**!
+
+:::
+
+
+
