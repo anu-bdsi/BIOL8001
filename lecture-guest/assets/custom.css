@@ -4,6 +4,10 @@
  font-family: 'Fuzzy Bubbles', cursive; 
 }
 
+.fa-ul li {
+  list-style-type: none;
+}
+
 .content_list {
   margin: 0!important;
   text-align: center!important;

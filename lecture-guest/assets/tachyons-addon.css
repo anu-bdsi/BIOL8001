@@ -542,7 +542,7 @@ input[type="url"],
 
 
 
-.fl { float: left;  _display: inline; }
+.flt { float: left;  _display: inline; }
 .fr { float: right; _display: inline; }
 .fn { float: none; }
 
@@ -554,13 +554,6 @@ input[type="url"],
 
 */
 
-/* Nicolas Gallaghers Clearfix solution
-   Ref: http://nicolasgallagher.com/micro-clearfix-hack/ */
-
-.cf:before,
-.cf:after   { content: " "; display: table; }
-.cf:after   { clear: both; }
-.cf         { *zoom: 1; }
 
 /*
 
