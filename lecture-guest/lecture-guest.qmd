@@ -179,7 +179,7 @@ The [**"technician"**]{.green2} carries out the experiment and collects the data
 
 <br><br>
 
-The [**"analyst"**]{.red2} analyses the data after the data is collected.
+The [**"analyst"**]{.red22} analyses the data after the data is collected.
 
 :::
 
@@ -243,50 +243,43 @@ cat(readLines("images/comm-model-id.svg")[c(-1, -2)], "\n")
 
 :::
 
-::: {.w-60 .pl3 .fragment fragment-index=1 .ruby2}
+::: {.w-60 .pl3}
+
+::: {.fragment fragment-index=1 .ruby2 .fade-in-then-out}
 
 [I have questions...]{.speech}
 
-<br><br>
+<br>
 
 `r rotating_text(c('[How do you measure **plant diversity**?]{.speech}', '[What levels of **warming** is of interest?]{.speech}', '[What are _essential ecosystem properties_?]{.speech}', '[What are your _experimental resources_?]{.speech}'), align = 'left!important', height = 1.2)`
 
-
-
-:::
-
-::: {.w-20 .fragment fragment-index=1}
-
-`r stat(w = "100%", flip = TRUE)`
+<br>
 
 :::
 
-
-:::
-
-
-## How does plant diversity and warming effect on essential ecosystem properties, *such as soil microbial functions*? {auto-animate=true}
-
-::: flex
-
-::: {.w-20}
-
-`r domain(w = "200px")`
-
-:::
-
-::: {.w-60 .pl3 .fragment fragment-index=1 .blue2}
-
-<br><br>
+::: {.fragment fragment-index=2 .blue2 .fade-in-then-semi-out}
 
 `r rotating_text(c('[Plant diversity is measured by the number of species on a plot of land]{.speech}', "[I guess it's like 1-3 degrees Celsius increase in temperature by warming.]{.speech}", '[Essential ecosystem properties include soil microbial functions -- we can see it in the biomass.]{.speech}', "[I have some plot of land where I'm going to set up this experiment.]{.speech}"), align = 'left!important', height = 2.4)`
 
 
+:::
+
+::: {.fragment fragment-index=3 .ruby2 .fr}
+
+[bla bla bla]{.speech}
+
+:::
+
+::: {.fragment fragment-index=3 .blue2}
+
+[bla bla bla]{.speech}
+
+:::
 
 
 :::
 
-::: {.w-20 .fragment fragment-index=1}
+::: {.w-20 .fragment fragment-index=1 .fade-right}
 
 `r stat(w = "100%", flip = TRUE)`
 
@@ -295,63 +288,26 @@ cat(readLines("images/comm-model-id.svg")[c(-1, -2)], "\n")
 
 :::
 
+
 ## {}
 
-::: {.fragment .f-headline style="padding-left:20%;padding-right:20%;text-align:center;"}
+::: {.f-headline style="padding-left:20%;padding-right:20%;text-align:center;"}
 
 
 <i class="fa-solid fa-comments"></i> **_Communication_** is the key to get the most out of the experimental data
 
 :::
 
-
-
-
-# [The Grammar of Experimental Designs]{style="color:white;"} {background-color="#be830e"}
-
-<center style="font-size:1.2em;color: white">
-
-```{r}
-#| echo: false
-#| output: asis
-cat(fa_list(c("fas fa-code" = "Use code to formulate your understanding and for communication.","fas fa-lightbulb" = 'Combine limited number of "words" (functions) to construct a variety of "sentences" (experimental designs).'), incremental = TRUE))
-```
-
-
-
-</center>
-
-# <i class='fab fa-r-project'></i> `edibble` package <img src="images/edibble.png" height="120px" style="vertical-align:middle;"> 
-
-```
-install.package("remotes")
-remotes::install_github("emitanaka/edibble")
-```
-
-::: {style="font-size:1.6em;"}
-
-- The aim of `edibble` package is to make an **e**xperimental **d**esign t**ibble** [(note: tidyverse version of a table)]{style="font-size:0.5em!important;"}.
-
-:::
-
-::: fragment
-
-<i class='fas fa-exclamation-circle'></i> This package is evolving! 
-
-<i class='fas fa-comment'></i> So feel free to give comments whether it works for you or not.
-
-:::
-
-
-
-# [<i class='fab fa-pagelines'></i> Let's get started with a _real example_]{style="color:white;"} {background-color="#be830e"}
-
-## An Experiment in Ecology
+## The actual source of the experiment {auto-animate=true}
 
 <i class='fas fa-newspaper'></i> Steinauer et al. (2015) Plant diversity effects on soil microbial functions and enzymes are stronger than warming in a grassland experiment. *Ecology* 96 (1) 99-112
 
 
-::: {.box .scroll style="height:70%;"}
+::: {.box .scroll style="height:70%;" data-id="box1"}
+
+*Abstract*
+
+Anthropogenic changes in biodiversity and atmospheric temperature significantly influence ecosystem processes. However, little is known about potential interactive effects of plant diversity and warming on essential ecosystem properties, such as soil microbial functions and element cycling. We studied the effects of orthogonal manipulations of plant diversity (one, four, and 16 species) and warming (ambient, +1.5°C, and +3°C) on soil microbial biomass, respiration, growth after nutrient additions, and activities of extracellular enzymes in 2011 and 2012 in the BAC (biodiversity and climate) perennial grassland experiment site at Cedar Creek, Minnesota, USA. Focal enzymes are involved in essential biogeochemical processes of the carbon, nitrogen, and phosphorus cycles. Soil microbial biomass and some enzyme activities involved in the C and N cycle increased significantly with increasing plant diversity in both years. In addition, 16-species mixtures buffered warming induced reductions in topsoil water content. We found no interactive effects of plant diversity and warming on soil microbial biomass and growth rates. However, the activity of several enzymes (1,4-β-glucosidase, 1,4-β-N-acetylglucosaminidase, phosphatase, peroxidase) depended on interactions between plant diversity and warming with elevated activities of enzymes involved in the C, N, and P cycles at both high plant diversity and high warming levels. Increasing plant diversity consistently decreased microbial biomass-specific enzyme activities and altered soil microbial growth responses to nutrient additions, indicating that plant diversity changed nutrient limitations and/or microbial community composition. In contrast to our expectations, higher plant diversity only buffered temperature effects on soil water content, but not on microbial functions. Temperature effects on some soil enzymes were greatest at high plant diversity. In total, our results suggest that the fundamental temperature ranges of soil microbial communities may be sufficiently broad to buffer their functioning against changes in temperature and that plant diversity may be a dominant control of soil microbial processes in a changing world.
 
 *Experimental design*
 
@@ -366,6 +322,84 @@ Soil  samples  of  three  subplots  in  each  of  27 experimental plots were tak
 :::
 
 
+## The actual source of the experiment (condensed version) {auto-animate=true auto-animate-easing="ease-in-out"}
+
+<i class='fas fa-newspaper'></i> Steinauer et al. (2015) Plant diversity effects on soil microbial functions and enzymes are stronger than warming in a grassland experiment. *Ecology* 96 (1) 99-112
+
+::: flex
+
+::: {.box .w-40 data-id="box1"}
+
+* Experimental plots were planted with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
+* Plots were divided into three subplots
+* Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)
+* Soil  samples  of  three  subplots  in  each  of  27 experimental plots were taken
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked
+* Approximately 4.5g soil fresh mass was used to measure soil microbial biomass
+
+:::
+
+
+::: {.w-60 .pl3 .fragment}
+
+In this experiment, 
+
+- what was the aim?
+- what are the **treatments**?
+- what are the **units**?
+- what are the treatment structure and unit structure?
+- how are the treatments assigned to units?
+- what is the response?
+- would the experimental data address the aim?
+
+
+
+`r stat(200, other = 'class="fl"')` `r analyst(200, flip = TRUE, other = "align='right'")`
+
+
+:::
+
+:::
+
+
+
+
+
+</center>
+
+# <i class='fab fa-r-project'></i> `edibble` package <img src="images/edibble.png" height="120px" style="vertical-align:middle;"> 
+
+
+```
+install.package("remotes")
+remotes::install_github("emitanaka/edibble")
+```
+
+<br>
+
+```{r}
+#| echo: false
+#| output: asis
+cat(fa_list(c("fas fa-lightbulb" = 'The **grammar of experimental designs** system = combine limited number of "words" (functions) to construct a variety of "sentences" (experimental designs).',
+              "fas fa-code" = "Use code to formulate your understanding and for communication.",
+            "fas fa-crosshairs" = 'The aim of `edibble` package is to make an **e**xperimental **d**esign t**ibble** (note: tidyverse version of a table).'),
+            incremental = TRUE))
+```
+
+
+
+::: fragment
+
+<i class='fas fa-exclamation-circle'></i> This package is evolving! 
+
+<i class='fas fa-comment'></i> So feel free to give comments whether it works for you or not.
+
+:::
+
+
+
+
+
 ## Experimental design with `edibble` {auto-animate=true}
 
 :::: {.columns}
@@ -378,7 +412,9 @@ Soil  samples  of  three  subplots  in  each  of  27 experimental plots were tak
 * Plots were divided into three subplots
 * Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)
 * Soil  samples  of  three  subplots  in  each  of  27 experimental plots were taken
-* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked
+* Approximately 4.5g soil fresh mass was used to measure soil microbial biomass
+
 
 :::
 
@@ -416,11 +452,13 @@ design("Steinauer et al. 2015")
 
 *Experimental design* **(condensed version)**
 
-* Experimental plots were planted with different plant communities spanning a [plant diversity gradient of one, four, and 16 species]{.red}, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
+* Experimental plots were planted with different plant communities spanning a [plant diversity gradient of one, four, and 16 species]{.red2}, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
 * Plots were divided into three subplots
 * Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)
 * Soil  samples  of  three  subplots  in  each  of  27 experimental plots were taken
-* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked
+* Approximately 4.5g soil fresh mass was used to measure soil microbial biomass
+
 
 :::
 
@@ -459,10 +497,12 @@ design("Steinauer et al. 2015") %>%
 *Experimental design* **(condensed version)**
 
 * Experimental plots were planted with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
-* [Plots were divided into three subplots]{.red}
+* [Plots were divided into three subplots]{.red2}
 * Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)
-* Soil  samples  of  three  subplots  in  each  of  [27 experimental plots]{.red} were taken
-* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+* Soil  samples  of  three  subplots  in  each  of  [27 experimental plots]{.red2} were taken
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked
+* Approximately 4.5g soil fresh mass was used to measure soil microbial biomass
+
 
 :::
 
@@ -506,9 +546,11 @@ design("Steinauer et al. 2015") %>%
 
 * Experimental plots were planted with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
 * Plots were divided into three subplots
-* Heat treatments were applied to subplots [emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)]{.red}
+* Heat treatments were applied to subplots [emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)]{.red2}
 * Soil  samples  of  three  subplots  in  each  of  27 experimental plots were taken
-* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked
+* Approximately 4.5g soil fresh mass was used to measure soil microbial biomass
+
 
 :::
 
@@ -523,7 +565,7 @@ design("Steinauer et al. 2015") %>%
   set_trts(diversity = c(1, 4, 16)) %>% 
   set_units(plot = 27,
             subplot = nested_in(plot, 3)) %>% 
-  set_trts(heat = c("0°C", "1.5°C", "3°C"))
+  set_trts(heat = c(0, 1.5, 3))
 ```
 
 
@@ -536,7 +578,7 @@ design("Steinauer et al. 2015") %>%
   set_trts(diversity = c(1, 4, 16)) %>% 
   set_units(plot = 27,
             subplot = nested_in(plot, 3)) %>% 
-  set_trts(heat = c("0°C", "1.5°C", "3°C"))
+  set_trts(heat = c(0, 1.5, 3))
 ```
 :::
 
@@ -552,11 +594,13 @@ design("Steinauer et al. 2015") %>%
 
 *Experimental design* **(condensed version)**
 
-* Experimental [plots were planted with different plant communities]{.red} spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
+* Experimental [plots were planted with different plant communities]{.red2} spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
 * Plots were divided into three subplots
-* [Heat treatments were applied to subplots]{.red} emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)
+* [Heat treatments were applied to subplots]{.red2} emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)
 * Soil  samples  of  three  subplots  in  each  of  27 experimental plots were taken
-* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked
+* Approximately 4.5g soil fresh mass was used to measure soil microbial biomass
+
 
 :::
 
@@ -571,7 +615,7 @@ design("Steinauer et al. 2015") %>%
   set_trts(diversity = c(1, 4, 16)) %>% 
   set_units(plot = 27,
             subplot = nested_in(plot, 3)) %>% 
-  set_trts(heat = c("0°C", "1.5°C", "3°C")) %>% 
+  set_trts(heat = c(0, 1.5, 3)) %>% 
   allot_trts(diversity ~ plot,
                   heat ~ subplot)
 ```
@@ -586,7 +630,7 @@ design("Steinauer et al. 2015") %>%
   set_trts(diversity = c(1, 4, 16)) %>% 
   set_units(plot = 27,
             subplot = nested_in(plot, 3)) %>% 
-  set_trts(heat = c("0°C", "1.5°C", "3°C")) %>% 
+  set_trts(heat = c(0, 1.5, 3)) %>% 
   allot_trts(diversity ~ plot,
                   heat ~ subplot)
 ```
@@ -608,7 +652,9 @@ design("Steinauer et al. 2015") %>%
 * Plots were divided into three subplots
 * Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)
 * Soil  samples  of  three  subplots  in  each  of  27 experimental plots were taken
-* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked
+* Approximately 4.5g soil fresh mass was used to measure soil microbial biomass
+
 
 :::
 
@@ -623,7 +669,7 @@ design("Steinauer et al. 2015") %>%
   set_trts(diversity = c(1, 4, 16)) %>% 
   set_units(plot = 27,
             subplot = nested_in(plot, 3)) %>% 
-  set_trts(heat = c("0°C", "1.5°C", "3°C")) %>% 
+  set_trts(heat = c(0, 1.5, 3)) %>% 
   allot_trts(diversity ~ plot,
                   heat ~ subplot) %>% 
   # guessing treatment were randomly allocated
@@ -640,7 +686,7 @@ design("Steinauer et al. 2015") %>%
   set_trts(diversity = c(1, 4, 16)) %>% 
   set_units(plot = 27,
             subplot = nested_in(plot, 3)) %>% 
-  set_trts(heat = c("0°C", "1.5°C", "3°C")) %>% 
+  set_trts(heat = c(0, 1.5, 3)) %>% 
   allot_trts(diversity ~ plot,
                   heat ~ subplot) %>% 
   # guessing treatment were randomly allocated
@@ -664,7 +710,9 @@ design("Steinauer et al. 2015") %>%
 * Plots were divided into three subplots
 * Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)
 * Soil  samples  of  three  subplots  in  each  of  27 experimental plots were taken
-* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.
+* Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked
+* Approximately 4.5g soil fresh mass was used to measure soil microbial biomass
+
 
 :::
 
@@ -673,18 +721,20 @@ design("Steinauer et al. 2015") %>%
 
 ```{r des7}
 #| eval: false
-#| code-line-numbers: "11"
+#| code-line-numbers: "11,13"
 library(edibble)
 design("Steinauer et al. 2015") %>% 
   set_trts(diversity = c(1, 4, 16)) %>% 
   set_units(plot = 27,
             subplot = nested_in(plot, 3)) %>% 
-  set_trts(heat = c("0°C", "1.5°C", "3°C")) %>% 
+  set_trts(heat = c(0, 1.5, 3)) %>% 
   allot_trts(diversity ~ plot,
                   heat ~ subplot) %>% 
   # guessing treatment were randomly allocated
   assign_trts(order = "random", seed = 2023) %>% 
-  serve_table()
+  serve_table() -> mydesign
+
+mydesign
 ```
 
 ```{css}
@@ -705,7 +755,7 @@ design("Steinauer et al. 2015") %>%
   set_trts(diversity = c(1, 4, 16)) %>% 
   set_units(plot = 27,
             subplot = nested_in(plot, 3)) %>% 
-  set_trts(heat = c("0°C", "1.5°C", "3°C")) %>% 
+  set_trts(heat = c(0, 1.5, 3)) %>% 
   allot_trts(diversity ~ plot,
                   heat ~ subplot) %>% 
   # guessing treatment were randomly allocated
@@ -728,68 +778,68 @@ This is in fact a **split-plot design**!
 :::
 
 
-## What's the response?
+## Statistical analysis plan
 
-. . . 
+- Think of your **statistical analysis plan** at the designing stage!
 
-<blockquote>
-
-Soil samples were taken in August 2011 and 2012 (peak of the growing season) for soil microbial measurements and enzyme assays. From each subplot, nine (2011) or six (2012) soil samples were taken.
-
-Approximately 4.5 g soil fresh mass was used to measure soil microbial biomass...
-
-</blockquote>
-
-. . . 
-
-- First define the units that the response is going to be recorded on.
-
-```{r}
-#| code-line-numbers: 5-13
-library(edibble)
-mydesign <- design("Steinauer et al. 2015") %>% 
-  set_trts(diversity = c(1, 4, 16), 
-           heat = c("0°C", "1.5°C", "3°C")) %>% 
-  set_units(plot = 27,
-            subplot = nested_in(plot, 3),
-            year = c("2011", "2012"),
-            visit = crossed_by(subplot, year),
-            # okay this is awkward.. (might need to improve this)
-            # visit 1-81 = 2011, visit 82-162 = 2012
-            sample = nested_in(visit,
-                               1:81 ~ 9, 
-                               82:162 ~ 6)) %>% 
-  # short hand for allot_trts() + assign_trts() + serve_table()
-  allot_table(diversity ~ plot,
-                  heat ~ subplot,
-              seed = 2023)
+```{r des7, eval = TRUE, echo = FALSE, results='hide'}
 ```
 
+::: flex
 
-## Setting the record factor
+::: w-80
 
 ```{r}
 myplan <- mydesign %>% 
-  set_rcrds(biomass = sample) %>% 
+  # Or was biomass = plot?
+  set_rcrds(biomass = subplot) %>% 
   expect_rcrds(biomass >= 0)
 ```
 
-. . . 
+::: fragment
 
-- Export to data with the encoded data validation rules:
+- Export to data with the encoded data validation rules: [<i class='fas fa-file-excel'></i>](mydata.xlsx)
 
-```{r, eval = FALSE}
-export_design(myplan, "mydata.xlsx")
+```{r}
+export_design(myplan, "mydata.xlsx", overwrite = TRUE)
 ```
+
+:::
+
+::: fragment
+
+- Baseline model for the given design:
+
+```{r}
+#| warning: true
+design_model(myplan)
+```
+```{r}
+design_model(myplan, type = "lmer")
+```
+
+:::
+
+
+
+
+:::
+
+::: {.w-20 .pl3}
+
+[Show me the SAP!]{.red2 .speech}
+
+`r analyst(w = 200, flip = TRUE, other = 'align="right"')`
+
+:::
+
+:::
 
 ## Simulating an experiment
 
-::: incremental
 
-- Think of your **statistical analysis plan** at the designing stage!
-- You can consider simulating data for your experiment.
+- Consider simulating data for your experiment.
 
-:::
 
 . . . 
 
@@ -797,14 +847,14 @@ export_design(myplan, "mydata.xlsx")
 
 ```{r}
 mysimprocess <- myplan %>% 
-  simulate_process(biomass = function(deffect = 2,
-                                      heffects = c(0, 1, 2)) {
-    # assume the following effects
-    diversity_effect <- deffect
-    heat_effect <- c("0°C" = heffects[1], "1.5°C" = heffects[2], "3°C" = heffects[3])
-    
+  simulate_process(biomass = function(dmain = 10,
+                                      hmain = -2.5,
+                                      hdint = 0) {
+    # generate some plot effect
+    plot_effects <- setNames(rnorm(n(plot), 0, 40), unique(plot))
     # let's assume that the data generating process is as follows:
-    diversity_effect * diversity + heat_effect[heat] + rnorm(n(), 0, 1.5)
+    160 + dmain * diversity + hmain * heat + hdint * diversity * heat  + 
+      plot_effects[plot] + rnorm(n(), 0, 70)
   }) 
 ```
 
@@ -812,21 +862,23 @@ mysimprocess <- myplan %>%
 
 ## Simulating the data 
 
+- How does the data look under different generating processes?
+
 ```{r}
 sim1 <- mysimprocess %>% 
-  simulate_rcrds(biomass = with_params())
+  simulate_rcrds(biomass = with_params(dmain = 10, hmain = -2.5, hdint = 0))
 
 sim2 <- mysimprocess %>% 
-  simulate_rcrds(biomass = with_params(deffect = 3, heffects = c(-1, 3, 1)))
+  simulate_rcrds(biomass = with_params(dmain = 14, hmain = 2, hdint = -5))
 ```
 
 . . . 
 
-Visualise, model and explore the simulated data...
+- Visualise, model and explore the simulated data...
 
 ```{r}
 library(ggplot2)
-g1 <- ggplot(sim1, aes(diversity, biomass, color = heat)) +
+g1 <- ggplot(sim1, aes(diversity, biomass, color = factor(heat))) +
   geom_jitter() +
   geom_smooth(method = lm) +
   scale_color_viridis_d() +
@@ -856,6 +908,54 @@ g1 %+% sim2 + ggtitle("Sim 2")
 
 :::
 
+
+
+## Try your planned analysis on simulated data {.scrollable}
+
+
+::: flex
+
+::: w-90
+
+```{r}
+lme4::lmer(biomass ~ factor(heat)*factor(diversity) + (1|plot), data = sim1)
+lme4::lmer(biomass ~ factor(heat)*factor(diversity) + (1|plot), data = sim2)
+```
+
+- Try variations:
+
+```{r}
+lme4::lmer(biomass ~ heat*diversity + (1|plot), data = sim1)
+
+lme4::lmer(biomass ~ heat*diversity + (1|plot), data = sim2)
+
+summary(aov(biomass ~ heat*diversity + Error(plot), data = sim1))
+
+summary(aov(biomass ~ heat*diversity + Error(plot), data = sim2))
+```
+
+
+:::
+
+::: {.w-10 .pl3}
+
+[Try the SAP!]{.red2 .speech}
+
+`r analyst(w = 200, flip = TRUE, other = 'align="right"')`
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+[Do these analysis make sense given the data generation process?]{.red2 .speech}
+
+`r analyst(w = 200, flip = TRUE, other = 'align="right"')`
+
+
+
+
+:::
+
+:::
 
 
 ## [<i class='fas fa-dna'></i> ArrayExpress: Public database of microarray experiments]{style="color:white;"} {background-color="#be830e"}

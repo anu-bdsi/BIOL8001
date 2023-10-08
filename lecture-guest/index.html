@@ -480,7 +480,7 @@ The <span class="blue2">Originator</span> of an Experiment
 <div class="flex">
 <div class="w-80">
 <p><br><br></p>
-<p>The <span class="red2"><strong>“analyst”</strong></span> analyses the data after the data is collected.</p>
+<p>The <span class="red22"><strong>“analyst”</strong></span> analyses the data after the data is collected.</p>
 </div>
 <div class="w-20">
 <p><img src="images/stickman/statistician2.svg" width="200px" class="img-hor"></p>
@@ -515,9 +515,10 @@ The <span class="blue2">Originator</span> of an Experiment
 <div class="w-20">
 <p><img src="images/stickman/domain1.svg" width="200px" class=""></p>
 </div>
-<div class="w-60 pl3 fragment ruby2" data-fragment-index="1">
+<div class="w-60 pl3">
+<div class="fragment ruby2 fade-in-then-out" data-fragment-index="1">
 <p><span class="speech">I have questions…</span></p>
-<p><br><br></p>
+<p><br></p>
 <div style="overflow: hidden; height: 1.2em;">
 <ul class="content_list left!important" style="text-align: left!important">
 <li class="content_list_item" style="height: 1.2em">
@@ -534,20 +535,9 @@ The <span class="blue2">Originator</span> of an Experiment
 </li>
 </ul>
 </div>
+<p><br></p>
 </div>
-<div class="w-20 fragment" data-fragment-index="1">
-<p><img src="images/stickman/statistician1.svg" width="100%" class="img-hor"></p>
-</div>
-</div>
-</section>
-<section id="how-does-plant-diversity-and-warming-effect-on-essential-ecosystem-properties-such-as-soil-microbial-functions" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">How does plant diversity and warming effect on essential ecosystem properties, <em>such as soil microbial functions</em>?</h2>
-<div class="flex">
-<div class="w-20">
-<p><img src="images/stickman/domain1.svg" width="200px" class=""></p>
-</div>
-<div class="w-60 pl3 fragment blue2" data-fragment-index="1">
-<p><br><br></p>
+<div class="fragment blue2 fade-in-then-semi-out" data-fragment-index="2">
 <div style="overflow: hidden; height: 2.4em;">
 <ul class="content_list left!important" style="text-align: left!important">
 <li class="content_list_item" style="height: 2.4em">
@@ -565,60 +555,87 @@ The <span class="blue2">Originator</span> of an Experiment
 </ul>
 </div>
 </div>
-<div class="w-20 fragment" data-fragment-index="1">
+<div class="fragment ruby2 fr" data-fragment-index="3">
+<p><span class="speech">bla bla bla</span></p>
+</div>
+<div class="fragment blue2" data-fragment-index="3">
+<p><span class="speech">bla bla bla</span></p>
+</div>
+</div>
+<div class="w-20 fragment fade-right" data-fragment-index="1">
 <p><img src="images/stickman/statistician1.svg" width="100%" class="img-hor"></p>
 </div>
 </div>
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
-<div class="fragment f-headline" style="padding-left:20%;padding-right:20%;text-align:center;">
+<div class="f-headline" style="padding-left:20%;padding-right:20%;text-align:center;">
 <p><i class="fa-solid fa-comments"></i> <strong><em>Communication</em></strong> is the key to get the most out of the experimental data</p>
 </div>
 </section>
-<section id="the-grammar-of-experimental-designs" class="title-slide slide level1 center" data-background-color="#be830e">
-<h1><span style="color:white;">The Grammar of Experimental Designs</span></h1>
-<center style="font-size:1.2em;color: white">
-<ul class="fa-ul">
-<li class="fragment">
-<span class="fa-li"><i class="fas fa-code"></i></span> Use code to formulate your understanding and for communication.
-</li>
-<li class="fragment">
-<span class="fa-li"><i class="fas fa-lightbulb"></i></span> Combine limited number of “words” (functions) to construct a variety of “sentences” (experimental designs).
-</li>
-</ul>
-</center>
-</section>
-
-<section id="edibble-package" class="title-slide slide level1 center">
-<h1><i class="fab fa-r-project"></i> <code>edibble</code> package <img src="images/edibble.png" height="120px" style="vertical-align:middle;"></h1>
-<pre><code>install.package("remotes")
-remotes::install_github("emitanaka/edibble")</code></pre>
-<div style="font-size:1.6em;">
-<ul>
-<li>The aim of <code>edibble</code> package is to make an <strong>e</strong>xperimental <strong>d</strong>esign t<strong>ibble</strong> <span style="font-size:0.5em!important;">(note: tidyverse version of a table)</span>.</li>
-</ul>
-</div>
-<div class="fragment">
-<p><i class="fas fa-exclamation-circle"></i> This package is evolving!</p>
-<p><i class="fas fa-comment"></i> So feel free to give comments whether it works for you or not.</p>
-</div>
-</section>
-
-<section>
-<section id="lets-get-started-with-a-real-example" class="title-slide slide level1 center" data-background-color="#be830e">
-<h1><span style="color:white;"><i class="fab fa-pagelines"></i> Let’s get started with a <em>real example</em></span></h1>
-
-</section>
-<section id="an-experiment-in-ecology" class="slide level2">
-<h2>An Experiment in Ecology</h2>
+<section id="the-actual-source-of-the-experiment" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The actual source of the experiment</h2>
 <p><i class="fas fa-newspaper"></i> Steinauer et al.&nbsp;(2015) Plant diversity effects on soil microbial functions and enzymes are stronger than warming in a grassland experiment. <em>Ecology</em> 96 (1) 99-112</p>
-<div class="box scroll" style="height:70%;">
+<div class="box scroll" style="height:70%;" data-id="box1">
+<p><em>Abstract</em></p>
+<p>Anthropogenic changes in biodiversity and atmospheric temperature significantly influence ecosystem processes. However, little is known about potential interactive effects of plant diversity and warming on essential ecosystem properties, such as soil microbial functions and element cycling. We studied the effects of orthogonal manipulations of plant diversity (one, four, and 16 species) and warming (ambient, +1.5°C, and +3°C) on soil microbial biomass, respiration, growth after nutrient additions, and activities of extracellular enzymes in 2011 and 2012 in the BAC (biodiversity and climate) perennial grassland experiment site at Cedar Creek, Minnesota, USA. Focal enzymes are involved in essential biogeochemical processes of the carbon, nitrogen, and phosphorus cycles. Soil microbial biomass and some enzyme activities involved in the C and N cycle increased significantly with increasing plant diversity in both years. In addition, 16-species mixtures buffered warming induced reductions in topsoil water content. We found no interactive effects of plant diversity and warming on soil microbial biomass and growth rates. However, the activity of several enzymes (1,4-β-glucosidase, 1,4-β-N-acetylglucosaminidase, phosphatase, peroxidase) depended on interactions between plant diversity and warming with elevated activities of enzymes involved in the C, N, and P cycles at both high plant diversity and high warming levels. Increasing plant diversity consistently decreased microbial biomass-specific enzyme activities and altered soil microbial growth responses to nutrient additions, indicating that plant diversity changed nutrient limitations and/or microbial community composition. In contrast to our expectations, higher plant diversity only buffered temperature effects on soil water content, but not on microbial functions. Temperature effects on some soil enzymes were greatest at high plant diversity. In total, our results suggest that the fundamental temperature ranges of soil microbial communities may be sufficiently broad to buffer their functioning against changes in temperature and that plant diversity may be a dominant control of soil microbial processes in a changing world.</p>
 <p><em>Experimental design</em></p>
 <p>The present study took place in the BAC experiment site established at the Cedar Creek Ecosystem Science Reserve, Minnesota, USA. The site occurs on a glacial outwash plain with sandy soils. Mean temperature during the growing season (April–September) was 15.98°C in 2011 and 17.18°C in 2012. Precipitation during the growing season was 721 mm in 2011. The growing season in 2012 was considerably drier, with 545 mm rainfall.</p>
 <p>Experimental plots (9×9 m) were planted in 1994 and 1995 with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed below (Tilman et al.&nbsp;2001). The grassland prairie species belonged to one of five plant functional groups: C<sub>3</sub> grasses (<em>Agropyron smithii</em> Tydb., <em>Elymus canadensis</em> L., <em>Koeleria cristata</em> (Ledeb.) Schult., <em>Poa pratensis</em> L.), C<sub>4</sub> grasses (<em>Andropogon gerardii</em> Vitman., <em>Panicum virgatum</em> L., <em>Schizachyrium scoparium</em> (Michx.) Nash, <em>Sorghas-trum nutans</em> (L.) Nash), legumes (<em>Amorpha canescens</em> Pursh., <em>Lespedeza capitata</em> Michx., <em>Lupinus perennis</em> L., <em>Petalostemum purpureum</em> (Vent.) Rydb., <em>Petalostemum villosum</em> Spreng.), nonlegume forbs (<em>Achillea millefolium</em> L., <em>Asclepias tuberosa</em> L., <em>Liatris aspera</em> Michx., <em>Monarda fistulosa</em> L., <em>Soldidago rigida</em> L.), and woody species (<em>Quercus ellipsoidalis</em> E. J. Hill, <em>Quercus macro-carpa</em> Michx.). The individuals of those two woody species (<em>Quercus</em> spp.), which were small in size and rare because of low survival, were removed from all plots in which they occurred in 2010.</p>
 <p>In addition to the manipulation of plant diversity, the plots were divided into three subplots (2.5×3.0 m). Heat treatments were applied from March to November each year, beginning in 2009, using infrared lamps 1.8 m above ground emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-freesoils) and 1200 W (which caused a 3°C increase; Valpine and Harte 2001, Kimball 2005, Whittingtonet al.&nbsp;2013) to increase the surface soil temperature of each subplot (see Plate 1). To account for possible shading effects, metal flanges and frames were hungover control subplots. An average across all vegetated plots, temperature manipulations elevated soil temperature at 1 cm depth by 1.18°C in the low warming (+1.5°C) treatment and by 2.69°C in the high warming (+3°C) treatment, and at 10 cm depth temperature by 1.00°C in the low warming (+1.5°C) treatment and by 2.16°C in the high warming (+3°C) treatment.</p>
 <p>Soil samples of three subplots in each of 27 experimental plots were taken; due to technical difficulties we could only analyze 66 samples out of 81 existing subplots (monoculture, 10 replicates in ambient +0°C treatment, eight replicates in +1.5°C treatment, nine replicates in +3°C treatment; four species mixture, six replicates in ambient +0°C treatment, six replicates in +1.5°C treatment, seven replicates in +3°C treatment; 16 species mixture, six replicates in ambient +0°C treatment, six replicates in +1.5°C treatment, eight replicates in +3°C treatment). The BAC plots are a representative subset of the plots in the biodiversity experiment E120 at Cedar Creek, which were assembled as random draws of a given number of species from the species pool (Zak et al.&nbsp;2003). Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.</p>
+</div>
+</section>
+<section id="the-actual-source-of-the-experiment-condensed-version" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">The actual source of the experiment (condensed version)</h2>
+<p><i class="fas fa-newspaper"></i> Steinauer et al.&nbsp;(2015) Plant diversity effects on soil microbial functions and enzymes are stronger than warming in a grassland experiment. <em>Ecology</em> 96 (1) 99-112</p>
+<div class="flex">
+<div class="box w-40" data-id="box1">
+<ul>
+<li>Experimental plots were planted with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups – 19 species in total)</li>
+<li>Plots were divided into three subplots</li>
+<li>Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)</li>
+<li>Soil samples of three subplots in each of 27 experimental plots were taken</li>
+<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked</li>
+<li>Approximately 4.5g soil fresh mass was used to measure soil microbial biomass</li>
+</ul>
+</div>
+<div class="w-60 pl3 fragment">
+<p>In this experiment,</p>
+<ul>
+<li>what was the aim?</li>
+<li>what are the <strong>treatments</strong>?</li>
+<li>what are the <strong>units</strong>?</li>
+<li>what are the treatment structure and unit structure?</li>
+<li>how are the treatments assigned to units?</li>
+<li>what is the response?</li>
+<li>would the experimental data address the aim?</li>
+</ul>
+<p><img src="images/stickman/statistician1.svg" class="fl" width="200"> <img src="images/stickman/statistician2.svg" align="right" width="200" class="img-hor"></p>
+</div>
+</div>
+
+</section>
+<section>
+<section id="edibble-package" class="title-slide slide level1 center">
+<h1><i class="fab fa-r-project"></i> <code>edibble</code> package <img src="images/edibble.png" height="120px" style="vertical-align:middle;"></h1>
+<pre><code>install.package("remotes")
+remotes::install_github("emitanaka/edibble")</code></pre>
+<p><br></p>
+<ul class="fa-ul">
+<li class="fragment">
+<span class="fa-li"><i class="fas fa-lightbulb"></i></span> The <strong>grammar of experimental designs</strong> system = combine limited number of “words” (functions) to construct a variety of “sentences” (experimental designs).
+</li>
+<li class="fragment">
+<span class="fa-li"><i class="fas fa-code"></i></span> Use code to formulate your understanding and for communication.
+</li>
+<li class="fragment">
+<span class="fa-li"><i class="fas fa-crosshairs"></i></span> The aim of <code>edibble</code> package is to make an <strong>e</strong>xperimental <strong>d</strong>esign t<strong>ibble</strong> (note: tidyverse version of a table).
+</li>
+</ul>
+<div class="fragment">
+<p><i class="fas fa-exclamation-circle"></i> This package is evolving!</p>
+<p><i class="fas fa-comment"></i> So feel free to give comments whether it works for you or not.</p>
 </div>
 </section>
 <section id="experimental-design-with-edibble" class="slide level2" data-auto-animate="true">
@@ -631,7 +648,8 @@ remotes::install_github("emitanaka/edibble")</code></pre>
 <li>Plots were divided into three subplots</li>
 <li>Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)</li>
 <li>Soil samples of three subplots in each of 27 experimental plots were taken</li>
-<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.</li>
+<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked</li>
+<li>Approximately 4.5g soil fresh mass was used to measure soil microbial biomass</li>
 </ul>
 </div><div class="column" style="width:56%;">
 <div class="fragment">
@@ -662,11 +680,12 @@ remotes::install_github("emitanaka/edibble")</code></pre>
 <div class="column box" style="width:40%;">
 <p><em>Experimental design</em> <strong>(condensed version)</strong></p>
 <ul>
-<li>Experimental plots were planted with different plant communities spanning a <span class="red">plant diversity gradient of one, four, and 16 species</span>, which were randomly chosen from the species listed (5 plant functional groups – 19 species in total)</li>
+<li>Experimental plots were planted with different plant communities spanning a <span class="red2">plant diversity gradient of one, four, and 16 species</span>, which were randomly chosen from the species listed (5 plant functional groups – 19 species in total)</li>
 <li>Plots were divided into three subplots</li>
 <li>Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)</li>
 <li>Soil samples of three subplots in each of 27 experimental plots were taken</li>
-<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.</li>
+<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked</li>
+<li>Approximately 4.5g soil fresh mass was used to measure soil microbial biomass</li>
 </ul>
 </div><div class="column" style="width:56%;">
 <div class="cell">
@@ -697,10 +716,11 @@ remotes::install_github("emitanaka/edibble")</code></pre>
 <p><em>Experimental design</em> <strong>(condensed version)</strong></p>
 <ul>
 <li>Experimental plots were planted with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups – 19 species in total)</li>
-<li><span class="red">Plots were divided into three subplots</span></li>
+<li><span class="red2">Plots were divided into three subplots</span></li>
 <li>Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)</li>
-<li>Soil samples of three subplots in each of <span class="red">27 experimental plots</span> were taken</li>
-<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.</li>
+<li>Soil samples of three subplots in each of <span class="red2">27 experimental plots</span> were taken</li>
+<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked</li>
+<li>Approximately 4.5g soil fresh mass was used to measure soil microbial biomass</li>
 </ul>
 </div><div class="column" style="width:56%;">
 <div class="cell">
@@ -734,9 +754,10 @@ remotes::install_github("emitanaka/edibble")</code></pre>
 <ul>
 <li>Experimental plots were planted with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups – 19 species in total)</li>
 <li>Plots were divided into three subplots</li>
-<li>Heat treatments were applied to subplots <span class="red">emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)</span></li>
+<li>Heat treatments were applied to subplots <span class="red2">emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)</span></li>
 <li>Soil samples of three subplots in each of 27 experimental plots were taken</li>
-<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.</li>
+<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked</li>
+<li>Approximately 4.5g soil fresh mass was used to measure soil microbial biomass</li>
 </ul>
 </div><div class="column" style="width:56%;">
 <div class="cell">
@@ -745,7 +766,7 @@ remotes::install_github("emitanaka/edibble")</code></pre>
 <span id="cb5-3" class="hljs-ln-code"><a href="#cb5-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb5-4" class="hljs-ln-code"><a href="#cb5-4"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
 <span id="cb5-5" class="hljs-ln-code"><a href="#cb5-5"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-6" class="hljs-ln-code"><a href="#cb5-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="st">"0°C"</span>, <span class="st">"1.5°C"</span>, <span class="st">"3°C"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-6" class="hljs-ln-code"><a href="#cb5-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.5</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -769,11 +790,12 @@ remotes::install_github("emitanaka/edibble")</code></pre>
 <div class="column box" style="width:40%;">
 <p><em>Experimental design</em> <strong>(condensed version)</strong></p>
 <ul>
-<li>Experimental <span class="red">plots were planted with different plant communities</span> spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups – 19 species in total)</li>
+<li>Experimental <span class="red2">plots were planted with different plant communities</span> spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups – 19 species in total)</li>
 <li>Plots were divided into three subplots</li>
-<li><span class="red">Heat treatments were applied to subplots</span> emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)</li>
+<li><span class="red2">Heat treatments were applied to subplots</span> emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)</li>
 <li>Soil samples of three subplots in each of 27 experimental plots were taken</li>
-<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.</li>
+<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked</li>
+<li>Approximately 4.5g soil fresh mass was used to measure soil microbial biomass</li>
 </ul>
 </div><div class="column" style="width:56%;">
 <div class="cell">
@@ -782,7 +804,7 @@ remotes::install_github("emitanaka/edibble")</code></pre>
 <span id="cb6-3" class="hljs-ln-code"><a href="#cb6-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb6-4" class="hljs-ln-code"><a href="#cb6-4"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
 <span id="cb6-5" class="hljs-ln-code"><a href="#cb6-5"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-6" class="hljs-ln-code"><a href="#cb6-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="st">"0°C"</span>, <span class="st">"1.5°C"</span>, <span class="st">"3°C"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-6" class="hljs-ln-code"><a href="#cb6-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.5</span>, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb6-7" class="hljs-ln-code"><a href="#cb6-7"></a>  <span class="fu">allot_trts</span>(diversity <span class="sc">~</span> plot,</span>
 <span id="cb6-8" class="hljs-ln-code"><a href="#cb6-8"></a>                  heat <span class="sc">~</span> subplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -812,7 +834,8 @@ remotes::install_github("emitanaka/edibble")</code></pre>
 <li>Plots were divided into three subplots</li>
 <li>Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)</li>
 <li>Soil samples of three subplots in each of 27 experimental plots were taken</li>
-<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.</li>
+<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked</li>
+<li>Approximately 4.5g soil fresh mass was used to measure soil microbial biomass</li>
 </ul>
 </div><div class="column" style="width:56%;">
 <div class="cell">
@@ -821,7 +844,7 @@ remotes::install_github("emitanaka/edibble")</code></pre>
 <span id="cb7-3" class="hljs-ln-code"><a href="#cb7-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb7-4" class="hljs-ln-code"><a href="#cb7-4"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
 <span id="cb7-5" class="hljs-ln-code"><a href="#cb7-5"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-6" class="hljs-ln-code"><a href="#cb7-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="st">"0°C"</span>, <span class="st">"1.5°C"</span>, <span class="st">"3°C"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-6" class="hljs-ln-code"><a href="#cb7-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.5</span>, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb7-7" class="hljs-ln-code"><a href="#cb7-7"></a>  <span class="fu">allot_trts</span>(diversity <span class="sc">~</span> plot,</span>
 <span id="cb7-8" class="hljs-ln-code"><a href="#cb7-8"></a>                  heat <span class="sc">~</span> subplot) <span class="sc">%&gt;%</span> </span>
 <span id="cb7-9" class="hljs-ln-code"><a href="#cb7-9"></a>  <span class="co"># guessing treatment were randomly allocated</span></span>
@@ -853,21 +876,24 @@ remotes::install_github("emitanaka/edibble")</code></pre>
 <li>Plots were divided into three subplots</li>
 <li>Heat treatments were applied to subplots emitting 600 W (which caused a 1.5°C increase in soil temperature for vegetation-free soils) and 1200 W (which caused a 3°C increase) (control with 0°C included)</li>
 <li>Soil samples of three subplots in each of 27 experimental plots were taken</li>
-<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked.</li>
+<li>Given low heterogeneity of soil abiotic conditions at the start of the experiment, the experiment was not blocked</li>
+<li>Approximately 4.5g soil fresh mass was used to measure soil microbial biomass</li>
 </ul>
 </div><div class="column" style="width:56%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="11"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb8-1" class="hljs-ln-code"><a href="#cb8-1"></a><span class="fu">library</span>(edibble)</span>
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="11,13"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb8-1" class="hljs-ln-code"><a href="#cb8-1"></a><span class="fu">library</span>(edibble)</span>
 <span id="cb8-2" class="hljs-ln-code"><a href="#cb8-2"></a><span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb8-3" class="hljs-ln-code"><a href="#cb8-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb8-4" class="hljs-ln-code"><a href="#cb8-4"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
 <span id="cb8-5" class="hljs-ln-code"><a href="#cb8-5"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-6" class="hljs-ln-code"><a href="#cb8-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="st">"0°C"</span>, <span class="st">"1.5°C"</span>, <span class="st">"3°C"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-6" class="hljs-ln-code"><a href="#cb8-6"></a>  <span class="fu">set_trts</span>(<span class="at">heat =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.5</span>, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb8-7" class="hljs-ln-code"><a href="#cb8-7"></a>  <span class="fu">allot_trts</span>(diversity <span class="sc">~</span> plot,</span>
 <span id="cb8-8" class="hljs-ln-code"><a href="#cb8-8"></a>                  heat <span class="sc">~</span> subplot) <span class="sc">%&gt;%</span> </span>
 <span id="cb8-9" class="hljs-ln-code"><a href="#cb8-9"></a>  <span class="co"># guessing treatment were randomly allocated</span></span>
 <span id="cb8-10" class="hljs-ln-code"><a href="#cb8-10"></a>  <span class="fu">assign_trts</span>(<span class="at">order =</span> <span class="st">"random"</span>, <span class="at">seed =</span> <span class="dv">2023</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-11" class="hljs-ln-code"><a href="#cb8-11"></a>  <span class="fu">serve_table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-11" class="hljs-ln-code"><a href="#cb8-11"></a>  <span class="fu">serve_table</span>() <span class="ot">-&gt;</span> mydesign</span>
+<span id="cb8-12" class="hljs-ln-code"><a href="#cb8-12"></a></span>
+<span id="cb8-13" class="hljs-ln-code"><a href="#cb8-13"></a>mydesign</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <style type="text/css">
@@ -898,78 +924,75 @@ remotes::install_github("emitanaka/edibble")</code></pre>
 </div>
 </div>
 </section>
-<section id="whats-the-response" class="slide level2">
-<h2>What’s the response?</h2>
-<div class="fragment">
-<blockquote>
-<p>Soil samples were taken in August 2011 and 2012 (peak of the growing season) for soil microbial measurements and enzyme assays. From each subplot, nine (2011) or six (2012) soil samples were taken.</p>
-<p>Approximately 4.5 g soil fresh mass was used to measure soil microbial biomass…</p>
-</blockquote>
+<section id="statistical-analysis-plan" class="slide level2">
+<h2>Statistical analysis plan</h2>
+<ul>
+<li>Think of your <strong>statistical analysis plan</strong> at the designing stage!</li>
+</ul>
+<div class="flex">
+<div class="w-80">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>myplan <span class="ot">&lt;-</span> mydesign <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="co"># Or was biomass = plot?</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">set_rcrds</span>(<span class="at">biomass =</span> subplot) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">expect_rcrds</span>(biomass <span class="sc">&gt;=</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <ul>
-<li>First define the units that the response is going to be recorded on.</li>
+<li>Export to data with the encoded data validation rules: <a href="mydata.xlsx"><i class="fas fa-file-excel"></i></a></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="5-13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(edibble)</span>
-<span id="cb9-2"><a href="#cb9-2"></a>mydesign <span class="ot">&lt;-</span> <span class="fu">design</span>(<span class="st">"Steinauer et al. 2015"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">set_trts</span>(<span class="at">diversity =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">16</span>), </span>
-<span id="cb9-4"><a href="#cb9-4"></a>           <span class="at">heat =</span> <span class="fu">c</span>(<span class="st">"0°C"</span>, <span class="st">"1.5°C"</span>, <span class="st">"3°C"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">set_units</span>(<span class="at">plot =</span> <span class="dv">27</span>,</span>
-<span id="cb9-6"><a href="#cb9-6"></a>            <span class="at">subplot =</span> <span class="fu">nested_in</span>(plot, <span class="dv">3</span>),</span>
-<span id="cb9-7"><a href="#cb9-7"></a>            <span class="at">year =</span> <span class="fu">c</span>(<span class="st">"2011"</span>, <span class="st">"2012"</span>),</span>
-<span id="cb9-8"><a href="#cb9-8"></a>            <span class="at">visit =</span> <span class="fu">crossed_by</span>(subplot, year),</span>
-<span id="cb9-9"><a href="#cb9-9"></a>            <span class="co"># okay this is awkward.. (might need to improve this)</span></span>
-<span id="cb9-10"><a href="#cb9-10"></a>            <span class="co"># visit 1-81 = 2011, visit 82-162 = 2012</span></span>
-<span id="cb9-11"><a href="#cb9-11"></a>            <span class="at">sample =</span> <span class="fu">nested_in</span>(visit,</span>
-<span id="cb9-12"><a href="#cb9-12"></a>                               <span class="dv">1</span><span class="sc">:</span><span class="dv">81</span> <span class="sc">~</span> <span class="dv">9</span>, </span>
-<span id="cb9-13"><a href="#cb9-13"></a>                               <span class="dv">82</span><span class="sc">:</span><span class="dv">162</span> <span class="sc">~</span> <span class="dv">6</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-14"><a href="#cb9-14"></a>  <span class="co"># short hand for allot_trts() + assign_trts() + serve_table()</span></span>
-<span id="cb9-15"><a href="#cb9-15"></a>  <span class="fu">allot_table</span>(diversity <span class="sc">~</span> plot,</span>
-<span id="cb9-16"><a href="#cb9-16"></a>                  heat <span class="sc">~</span> subplot,</span>
-<span id="cb9-17"><a href="#cb9-17"></a>              <span class="at">seed =</span> <span class="dv">2023</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">export_design</span>(myplan, <span class="st">"mydata.xlsx"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</section>
-<section id="setting-the-record-factor" class="slide level2">
-<h2>Setting the record factor</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>myplan <span class="ot">&lt;-</span> mydesign <span class="sc">%&gt;%</span> </span>
-<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">set_rcrds</span>(<span class="at">biomass =</span> sample) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">expect_rcrds</span>(biomass <span class="sc">&gt;=</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <ul>
-<li>Export to data with the encoded data validation rules:</li>
+<li>Baseline model for the given design:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">export_design</span>(myplan, <span class="st">"mydata.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">design_model</span>(myplan)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: An appropriate model for analysis requires context and diagnosis.
+Don't take this suggested baseline model without appropriate thinking.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>aov(biomass ~ factor(diversity)*factor(heat) + Error(plot), data = .)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">design_model</span>(myplan, <span class="at">type =</span> <span class="st">"lmer"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>lme4::lmer(biomass ~ factor(diversity)*factor(heat) + (1|plot), data = .)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="w-20 pl3">
+<p><span class="red2 speech">Show me the SAP!</span></p>
+<p><img src="images/stickman/statistician2.svg" align="right" width="200" class="img-hor"></p>
 </div>
 </div>
 </section>
 <section id="simulating-an-experiment" class="slide level2">
 <h2>Simulating an experiment</h2>
-<div>
 <ul>
-<li class="fragment">Think of your <strong>statistical analysis plan</strong> at the designing stage!</li>
-<li class="fragment">You can consider simulating data for your experiment.</li>
+<li>Consider simulating data for your experiment.</li>
 </ul>
-</div>
 <div class="fragment">
 <ul>
 <li>Enter your simulation scheme like below.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>mysimprocess <span class="ot">&lt;-</span> myplan <span class="sc">%&gt;%</span> </span>
-<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">simulate_process</span>(<span class="at">biomass =</span> <span class="cf">function</span>(<span class="at">deffect =</span> <span class="dv">2</span>,</span>
-<span id="cb12-3"><a href="#cb12-3"></a>                                      <span class="at">heffects =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>)) {</span>
-<span id="cb12-4"><a href="#cb12-4"></a>    <span class="co"># assume the following effects</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>    diversity_effect <span class="ot">&lt;-</span> deffect</span>
-<span id="cb12-6"><a href="#cb12-6"></a>    heat_effect <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"0°C"</span> <span class="ot">=</span> heffects[<span class="dv">1</span>], <span class="st">"1.5°C"</span> <span class="ot">=</span> heffects[<span class="dv">2</span>], <span class="st">"3°C"</span> <span class="ot">=</span> heffects[<span class="dv">3</span>])</span>
-<span id="cb12-7"><a href="#cb12-7"></a>    </span>
-<span id="cb12-8"><a href="#cb12-8"></a>    <span class="co"># let's assume that the data generating process is as follows:</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a>    diversity_effect <span class="sc">*</span> diversity <span class="sc">+</span> heat_effect[heat] <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">n</span>(), <span class="dv">0</span>, <span class="fl">1.5</span>)</span>
-<span id="cb12-10"><a href="#cb12-10"></a>  }) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>mysimprocess <span class="ot">&lt;-</span> myplan <span class="sc">%&gt;%</span> </span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">simulate_process</span>(<span class="at">biomass =</span> <span class="cf">function</span>(<span class="at">dmain =</span> <span class="dv">10</span>,</span>
+<span id="cb16-3"><a href="#cb16-3"></a>                                      <span class="at">hmain =</span> <span class="sc">-</span><span class="fl">2.5</span>,</span>
+<span id="cb16-4"><a href="#cb16-4"></a>                                      <span class="at">hdint =</span> <span class="dv">0</span>) {</span>
+<span id="cb16-5"><a href="#cb16-5"></a>    <span class="co"># generate some plot effect</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a>    plot_effects <span class="ot">&lt;-</span> <span class="fu">setNames</span>(<span class="fu">rnorm</span>(<span class="fu">n</span>(plot), <span class="dv">0</span>, <span class="dv">40</span>), <span class="fu">unique</span>(plot))</span>
+<span id="cb16-7"><a href="#cb16-7"></a>    <span class="co"># let's assume that the data generating process is as follows:</span></span>
+<span id="cb16-8"><a href="#cb16-8"></a>    <span class="dv">160</span> <span class="sc">+</span> dmain <span class="sc">*</span> diversity <span class="sc">+</span> hmain <span class="sc">*</span> heat <span class="sc">+</span> hdint <span class="sc">*</span> diversity <span class="sc">*</span> heat  <span class="sc">+</span> </span>
+<span id="cb16-9"><a href="#cb16-9"></a>      plot_effects[plot] <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">n</span>(), <span class="dv">0</span>, <span class="dv">70</span>)</span>
+<span id="cb16-10"><a href="#cb16-10"></a>  }) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>The return object needs to te the same size as the number of rows for the design table.</li>
@@ -978,32 +1001,37 @@ remotes::install_github("emitanaka/edibble")</code></pre>
 </section>
 <section id="simulating-the-data" class="slide level2">
 <h2>Simulating the data</h2>
+<ul>
+<li>How does the data look under different generating processes?</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>sim1 <span class="ot">&lt;-</span> mysimprocess <span class="sc">%&gt;%</span> </span>
-<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">simulate_rcrds</span>(<span class="at">biomass =</span> <span class="fu">with_params</span>())</span>
-<span id="cb13-3"><a href="#cb13-3"></a></span>
-<span id="cb13-4"><a href="#cb13-4"></a>sim2 <span class="ot">&lt;-</span> mysimprocess <span class="sc">%&gt;%</span> </span>
-<span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">simulate_rcrds</span>(<span class="at">biomass =</span> <span class="fu">with_params</span>(<span class="at">deffect =</span> <span class="dv">3</span>, <span class="at">heffects =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>sim1 <span class="ot">&lt;-</span> mysimprocess <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">simulate_rcrds</span>(<span class="at">biomass =</span> <span class="fu">with_params</span>(<span class="at">dmain =</span> <span class="dv">10</span>, <span class="at">hmain =</span> <span class="sc">-</span><span class="fl">2.5</span>, <span class="at">hdint =</span> <span class="dv">0</span>))</span>
+<span id="cb17-3"><a href="#cb17-3"></a></span>
+<span id="cb17-4"><a href="#cb17-4"></a>sim2 <span class="ot">&lt;-</span> mysimprocess <span class="sc">%&gt;%</span> </span>
+<span id="cb17-5"><a href="#cb17-5"></a>  <span class="fu">simulate_rcrds</span>(<span class="at">biomass =</span> <span class="fu">with_params</span>(<span class="at">dmain =</span> <span class="dv">14</span>, <span class="at">hmain =</span> <span class="dv">2</span>, <span class="at">hdint =</span> <span class="sc">-</span><span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
-<p>Visualise, model and explore the simulated data…</p>
+<ul>
+<li>Visualise, model and explore the simulated data…</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb14-2"><a href="#cb14-2"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sim1, <span class="fu">aes</span>(diversity, biomass, <span class="at">color =</span> heat)) <span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm) <span class="sc">+</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb14-6"><a href="#cb14-6"></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb18-2"><a href="#cb18-2"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sim1, <span class="fu">aes</span>(diversity, biomass, <span class="at">color =</span> <span class="fu">factor</span>(heat))) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="flex">
 <div class="w-50">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>g1 <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Sim 1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>g1 <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Sim 1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="quarto-figure quarto-figure-center" width="960">
 <figure class="quarto-float quarto-float-fig">
 <div>
-<img data-src="lecture-guest_files/figure-revealjs/unnamed-chunk-17-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-8" width="960">
+<img data-src="lecture-guest_files/figure-revealjs/unnamed-chunk-18-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-8" width="960">
 </div>
 </figure>
 </div>
@@ -1012,18 +1040,152 @@ remotes::install_github("emitanaka/edibble")</code></pre>
 </div>
 <div class="w-50 pl3">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>g1 <span class="sc">%+%</span> sim2 <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Sim 2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>g1 <span class="sc">%+%</span> sim2 <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Sim 2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="quarto-figure quarto-figure-center" width="960">
 <figure class="quarto-float quarto-float-fig">
 <div>
-<img data-src="lecture-guest_files/figure-revealjs/unnamed-chunk-18-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-9" width="960">
+<img data-src="lecture-guest_files/figure-revealjs/unnamed-chunk-19-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-9" width="960">
 </div>
 </figure>
 </div>
 </div>
 </div>
 </div>
+</div>
+</div>
+</section>
+<section id="try-your-planned-analysis-on-simulated-data" class="slide level2 scrollable">
+<h2>Try your planned analysis on simulated data</h2>
+<div class="flex">
+<div class="w-90">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>lme4<span class="sc">::</span><span class="fu">lmer</span>(biomass <span class="sc">~</span> <span class="fu">factor</span>(heat)<span class="sc">*</span><span class="fu">factor</span>(diversity) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>plot), <span class="at">data =</span> sim1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: biomass ~ factor(heat) * factor(diversity) + (1 | plot)
+   Data: sim1
+REML criterion at convergence: 821.647
+Random effects:
+ Groups   Name        Std.Dev.
+ plot     (Intercept) 34.00   
+ Residual             61.58   
+Number of obs: 80, groups:  plot, 27
+Fixed Effects:
+                        (Intercept)                      factor(heat)1.5  
+                            160.040                              -16.992  
+                      factor(heat)3                   factor(diversity)4  
+                             20.940                                3.605  
+                factor(diversity)16   factor(heat)1.5:factor(diversity)4  
+                            167.399                               56.068  
+   factor(heat)3:factor(diversity)4  factor(heat)1.5:factor(diversity)16  
+                             -4.623                               35.121  
+  factor(heat)3:factor(diversity)16  
+                             -4.146  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>lme4<span class="sc">::</span><span class="fu">lmer</span>(biomass <span class="sc">~</span> <span class="fu">factor</span>(heat)<span class="sc">*</span><span class="fu">factor</span>(diversity) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>plot), <span class="at">data =</span> sim2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: biomass ~ factor(heat) * factor(diversity) + (1 | plot)
+   Data: sim2
+REML criterion at convergence: 818.808
+Random effects:
+ Groups   Name        Std.Dev.
+ plot     (Intercept) 31.92   
+ Residual             66.88   
+Number of obs: 79, groups:  plot, 27
+Fixed Effects:
+                        (Intercept)                      factor(heat)1.5  
+                             190.70                               -72.49  
+                      factor(heat)3                   factor(diversity)4  
+                             -54.45                                42.19  
+                factor(diversity)16   factor(heat)1.5:factor(diversity)4  
+                             223.07                                13.25  
+   factor(heat)3:factor(diversity)4  factor(heat)1.5:factor(diversity)16  
+                             -13.84                               -42.98  
+  factor(heat)3:factor(diversity)16  
+                            -239.84  </code></pre>
+</div>
+</div>
+<ul>
+<li>Try variations:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>lme4<span class="sc">::</span><span class="fu">lmer</span>(biomass <span class="sc">~</span> heat<span class="sc">*</span>diversity <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>plot), <span class="at">data =</span> sim1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: biomass ~ heat * diversity + (1 | plot)
+   Data: sim1
+REML criterion at convergence: 882.122
+Random effects:
+ Groups   Name        Std.Dev.
+ plot     (Intercept) 33.91   
+ Residual             60.79   
+Number of obs: 80, groups:  plot, 27
+Fixed Effects:
+   (Intercept)            heat       diversity  heat:diversity  
+     131.51284         6.81572        12.36064        -0.08887  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>lme4<span class="sc">::</span><span class="fu">lmer</span>(biomass <span class="sc">~</span> heat<span class="sc">*</span>diversity <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>plot), <span class="at">data =</span> sim2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: biomass ~ heat * diversity + (1 | plot)
+   Data: sim2
+REML criterion at convergence: 882.8242
+Random effects:
+ Groups   Name        Std.Dev.
+ plot     (Intercept) 29.87   
+ Residual             68.09   
+Number of obs: 79, groups:  plot, 27
+Fixed Effects:
+   (Intercept)            heat       diversity  heat:diversity  
+       158.716          -7.336          16.572          -5.542  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(biomass <span class="sc">~</span> heat<span class="sc">*</span>diversity <span class="sc">+</span> <span class="fu">Error</span>(plot), <span class="at">data =</span> sim1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Error: plot
+          Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+heat       1  24746   24746   3.416   0.0769 .  
+diversity  1 477337  477337  65.888 2.44e-08 ***
+Residuals 24 173873    7245                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Error: Within
+               Df Sum Sq Mean Sq F value Pr(&gt;F)
+heat            1   4981    4981   1.346  0.251
+heat:diversity  1     91      91   0.025  0.876
+Residuals      51 188784    3702               </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(biomass <span class="sc">~</span> heat<span class="sc">*</span>diversity <span class="sc">+</span> <span class="fu">Error</span>(plot), <span class="at">data =</span> sim2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Error: plot
+               Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+heat            1   2026    2026   0.272    0.607    
+diversity       1 245347  245347  32.972 7.55e-06 ***
+heat:diversity  1    232     232   0.031    0.861    
+Residuals      23 171145    7441                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Error: Within
+               Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+heat            1 244880  244880   52.68 2.37e-09 ***
+heat:diversity  1 152197  152197   32.74 5.90e-07 ***
+Residuals      50 232423    4648                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</div>
+<div class="w-10 pl3">
+<p><span class="red2 speech">Try the SAP!</span></p>
+<p><img src="images/stickman/statistician2.svg" align="right" width="200" class="img-hor"></p>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<p><span class="red2 speech">Do these analysis make sense given the data generation process?</span></p>
+<p><img src="images/stickman/statistician2.svg" align="right" width="200" class="img-hor"></p>
 </div>
 </div>
 </section>
