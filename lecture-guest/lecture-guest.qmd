@@ -289,14 +289,14 @@ cat(readLines("images/comm-model-id.svg")[c(-1, -2)], "\n")
 :::
 
 
-## {}
+# [<i class="fa-solid fa-comments"></i> **_Communication_**]{.blue2}
 
-::: {.f-headline style="padding-left:20%;padding-right:20%;text-align:center;"}
+::: {.f-headline .fr}
 
-
-<i class="fa-solid fa-comments"></i> **_Communication_** is the key to get the most out of the experimental data
+is the key to get the most out of the experimental data
 
 :::
+
 
 ## The actual source of the experiment {auto-animate=true}
 
