@@ -108,7 +108,7 @@ asciicast::init_knitr_engine(
 
 ::: {.fragment .fade-up fragment-index=1}
 
-The [**"domain expert"**]{.blue2} drives the experimental objective and has the intricate knowledge about the subject area
+The [**"domain expert"**]{.blue2} drives the experimental objective and has the intricate knowledge about the subject area.
 
 :::
 
