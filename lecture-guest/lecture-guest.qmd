@@ -134,7 +134,7 @@ Stick person images by <a href="https://pixabay.com/users/openclipart-vectors-30
 
 <br><br>
 
-The [**"statistican"**]{.ruby2} creates the experimental design layout after taking into account the statistical and practical constraints.
+The [**"statistician"**]{.ruby2} creates the experimental design layout after taking into account the statistical and practical constraints.
 
 :::
 
