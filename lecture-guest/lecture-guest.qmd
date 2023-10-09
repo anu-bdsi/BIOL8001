@@ -179,7 +179,7 @@ The [**"technician"**]{.green2} carries out the experiment and collects the data
 
 <br><br>
 
-The [**"analyst"**]{.red22} analyses the data after the data is collected.
+The [**"analyst"**]{.red2} analyses the data after the data is collected.
 
 :::
 
