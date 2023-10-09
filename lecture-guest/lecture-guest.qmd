@@ -328,7 +328,7 @@ Soil  samples  of  three  subplots  in  each  of  27 experimental plots were tak
 
 ::: flex
 
-::: {.box .w-40 data-id="box1"}
+::: {.box .w-45 data-id="box1"}
 
 * Experimental plots were planted with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups -- 19 species in total)
 * Plots were divided into three subplots
@@ -340,7 +340,7 @@ Soil  samples  of  three  subplots  in  each  of  27 experimental plots were tak
 :::
 
 
-::: {.w-60 .pl3 .fragment}
+::: {.w-55 .pl3 .fragment}
 
 In this experiment, 
 
@@ -354,7 +354,7 @@ In this experiment,
 
 
 
-`r stat(200, other = 'class="fl"')` `r analyst(200, flip = TRUE, other = "align='right'")`
+`r stat(200, other = 'class="fl"')` `r analyst(140, flip = TRUE, other = "align='right'")`
 
 
 :::
@@ -858,7 +858,7 @@ mysimprocess <- myplan %>%
   }) 
 ```
 
-- The return object needs to te the same size as the number of rows for the design table.
+- The return object needs to be the same size as the number of rows for the design table.
 
 ## Simulating the data 
 
@@ -881,8 +881,7 @@ library(ggplot2)
 g1 <- ggplot(sim1, aes(diversity, biomass, color = factor(heat))) +
   geom_jitter() +
   geom_smooth(method = lm) +
-  scale_color_viridis_d() +
-  theme_classic(base_size = 18)
+  scale_color_viridis_d() + theme_classic(base_size = 18)
 ```
 
 
@@ -892,6 +891,7 @@ g1 <- ggplot(sim1, aes(diversity, biomass, color = factor(heat))) +
 ::: {.w-50}
 
 ```{r}
+#| fig-height: 3.5
 g1 + ggtitle("Sim 1")
 ```
 
@@ -901,6 +901,7 @@ g1 + ggtitle("Sim 1")
 ::: {.w-50 .pl3}
 
 ```{r}
+#| fig-height: 3.5
 g1 %+% sim2 + ggtitle("Sim 2")
 ```
 

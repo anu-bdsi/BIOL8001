@@ -590,7 +590,7 @@ The <span class="blue2">Originator</span> of an Experiment
 <h2 data-id="quarto-animate-title">The actual source of the experiment (condensed version)</h2>
 <p><i class="fas fa-newspaper"></i> Steinauer et al.&nbsp;(2015) Plant diversity effects on soil microbial functions and enzymes are stronger than warming in a grassland experiment. <em>Ecology</em> 96 (1) 99-112</p>
 <div class="flex">
-<div class="box w-40" data-id="box1">
+<div class="box w-45" data-id="box1">
 <ul>
 <li>Experimental plots were planted with different plant communities spanning a plant diversity gradient of one, four, and 16 species, which were randomly chosen from the species listed (5 plant functional groups – 19 species in total)</li>
 <li>Plots were divided into three subplots</li>
@@ -600,7 +600,7 @@ The <span class="blue2">Originator</span> of an Experiment
 <li>Approximately 4.5g soil fresh mass was used to measure soil microbial biomass</li>
 </ul>
 </div>
-<div class="w-60 pl3 fragment">
+<div class="w-55 pl3 fragment">
 <p>In this experiment,</p>
 <ul>
 <li>what was the aim?</li>
@@ -611,7 +611,7 @@ The <span class="blue2">Originator</span> of an Experiment
 <li>what is the response?</li>
 <li>would the experimental data address the aim?</li>
 </ul>
-<p><img src="images/stickman/statistician1.svg" class="fl" width="200"> <img src="images/stickman/statistician2.svg" align="right" width="200" class="img-hor"></p>
+<p><img src="images/stickman/statistician1.svg" class="fl" width="200"> <img src="images/stickman/statistician2.svg" align="right" width="140" class="img-hor"></p>
 </div>
 </div>
 
@@ -995,7 +995,7 @@ Don't take this suggested baseline model without appropriate thinking.</code></p
 <span id="cb16-10"><a href="#cb16-10"></a>  }) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>The return object needs to te the same size as the number of rows for the design table.</li>
+<li>The return object needs to be the same size as the number of rows for the design table.</li>
 </ul>
 </div>
 </section>
@@ -1020,8 +1020,7 @@ Don't take this suggested baseline model without appropriate thinking.</code></p
 <span id="cb18-2"><a href="#cb18-2"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sim1, <span class="fu">aes</span>(diversity, biomass, <span class="at">color =</span> <span class="fu">factor</span>(heat))) <span class="sc">+</span></span>
 <span id="cb18-3"><a href="#cb18-3"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
 <span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm) <span class="sc">+</span></span>
-<span id="cb18-5"><a href="#cb18-5"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb18-6"><a href="#cb18-6"></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-5"><a href="#cb18-5"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span> <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="flex">
 <div class="w-50">
